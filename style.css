@@ -1,0 +1,92 @@
+body{
+    
+    background-color:aquamarine ;
+    font-size: medium;
+}
+
+.img{
+    
+    display:flex;
+    justify-content: center;
+
+    }
+
+.foto{
+    
+    display: flex;
+    justify-content:space-between;
+    width: 50%;
+    position:relative;
+    width: 300px;
+    align-items:center;
+    border:4px solid;
+
+}   
+
+.informacion-personal{
+    
+    display: flex;
+    font-size: 20px;
+    padding: 50px;
+    position: relative;
+    text-align:right;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color:aqua;
+    border:3px solid;
+}
+
+.h1{
+    text-align: center;
+}
+
+.estudios{
+    
+    display: flex;
+    font-size: 20px;
+    position:relative;
+    text-align:justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    text-align:left;
+    background-color:aqua;
+    border:3px solid;
+
+}
+
+.experiencia-laboral{
+
+    display: flex;
+    font-size: 20px;
+    position:relative;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align:left;
+    background-color: aqua;
+    border:3px solid;
+
+}
+
+.referencias{
+
+    display: flex;
+    font-size: 20px;
+    position:relative;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align:left;
+    background-color:aqua;
+    border:3px;
+
+}
+
+.informacion{
+    
+    text-align: justify;
+    font-size: 20px;
+    position:relative;    
+    border:3px solid;
+
+}
