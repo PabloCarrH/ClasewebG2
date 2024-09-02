@@ -88,4 +88,11 @@ Requerimientos No Funcionales
           -Sistema para dejar y leer reseñas y calificaciones.
           -Moderación y gestión de reseñas por parte del administrador
 
+          
+      *Gestion de servicios
+         -Solicitud de servicios por parte del cliente
+         -Propuesta y aceptaciòn por parte del trabajador
+         -Gestion de fechas y horarios de prstaciòn de servicios
+         -Encuesta de verificacipon del servicio
+
        
