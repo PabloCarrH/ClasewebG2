@@ -21,6 +21,45 @@ Proxima clase
    
 Proyecto Profesionales a un click 
 
+
+Requerimientos No Funcionales
+
+1. Usabilidad: 
+
+•	Interfaz Intuitiva
+
+-La plataforma debe ser fácil de usar y navegar para todos los usuarios. 
+
+-Cumplir con estándares de accesibilidad para usuarios con discapacidades.
+
+2. Rendimiento: 
+
+-La plataforma debe responder a las solicitudes de los usuarios en un tiempo razonable. 
+
+-Capacidad para manejar un aumento en el número de usuarios y transacciones sin afectar el rendimiento.
+
+3. Seguridad
+
+-Implementar medidas para proteger los datos personales y financieros de los usuarios. 
+
+-Sistema robusto de autenticación y autorización para prevenir accesos no autorizados. 
+
+-Implementar cifrado HTTPS para la protección de datos en tránsito.
+
+4. Disponibilidad
+
+-La plataforma debe tener un objetivo de tiempo de inactividad mínimo. 
+
+-Procedimientos para el mantenimiento regular sin afectar la disponibilidad del servicio.
+
+5. Compatibilidad
+
+-Compatibilidad con los principales navegadores web (Chrome, Firefox, Safari, Edge). 
+
+-Accesible desde dispositivos móviles y de escritorio.
+
+
+
 -¿Que es ?
 
 -Requerimientos funcionales
