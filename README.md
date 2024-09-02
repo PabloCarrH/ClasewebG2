@@ -14,3 +14,17 @@ Proxima clase
   2) Definir cual va a ser el diseño web(El tema de la pagina): UI Kit 
   3) Definir el desarrollo web que se desea realizar.
    
+Proyecto Profesionales a un click 
+
+-¿Que es ?
+
+-Requerimientos funcionales
+
+    *Registro de Trabajadores y Clientes*
+      -Proceso de registro con validación de datos básicos. 
+      -Envío de documentos para verificación (para trabajadores y clientes). 
+      -Confirmación de identidad.
+      
+    *Verificación*
+      -Sistema de verificación de identidad y antecedentes para trabajadores. 
+      -Sistema de verificación básica para clientes.
