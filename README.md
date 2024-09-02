@@ -35,5 +35,12 @@ Proyecto Profesionales a un click
        -Trabajador y Cliente:
           -Interfaz amigable para la gestión de perfiles, solicitudes, pagos y reseñas.
           -Notificaciones de actualizaciones, solicitudes y cambios en el estado de servicios.
+    *Historial y Reseñas*
+       •	Historial:
+          -Registro de servicios solicitados y prestados
+          -Historial de pagos y transacciones.
+       •	Reseñas:
+          -Sistema para dejar y leer reseñas y calificaciones.
+          -Moderación y gestión de reseñas por parte del administrador
 
        
