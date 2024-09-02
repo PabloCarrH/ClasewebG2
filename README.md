@@ -13,4 +13,4 @@ Proxima clase
   1) La pagina debe estar conectada a una base de datos y debe estar publicada.
   2) Analisis y definicion de requerimientos de la propuesta.
   3) Definir cual va a ser el diseño web(El tema de la pagina).
-  4) Definar el desarrollo wed que se desea realizar.
+  4) Definar el desarrollo web que se desea realizar.
