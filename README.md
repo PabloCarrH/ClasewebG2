@@ -8,9 +8,9 @@ Un buen diseño mejora la experiencia del usuario al facilitar la navegación y 
 Plan de trabajo
 Desarrollo de aplicación web
 
-
+Nota: buscar como conectar una base de datos y debe estar publicada.
 Proxima clase 
-  1) La pagina debe estar conectada a una base de datos y debe estar publicada.
-  2) Analisis y definicion de requerimientos de la propuesta.
-  3) Definir cual va a ser el diseño web(El tema de la pagina): UI Kit 
-  4) Definar el desarrollo web que se desea realizar.
+  1) Analisis y definicion de requerimientos de la propuesta.
+  2) Definir cual va a ser el diseño web(El tema de la pagina): UI Kit 
+  3) Definir el desarrollo web que se desea realizar.
+   
