@@ -28,3 +28,12 @@ Proyecto Profesionales a un click
     *Verificación*
       -Sistema de verificación de identidad y antecedentes para trabajadores. 
       -Sistema de verificación básica para clientes.
+  
+    *Interfaz de usuario*
+       -Administrador: 
+          -Dashboard con acceso a herramientas de gestión, informes y estadísticas.
+       -Trabajador y Cliente:
+          -Interfaz amigable para la gestión de perfiles, solicitudes, pagos y reseñas.
+          -Notificaciones de actualizaciones, solicitudes y cambios en el estado de servicios.
+
+       
