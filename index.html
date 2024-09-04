@@ -3,29 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Empleo</title>
+    <title>EMPLEOFINDER</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Simple CSS to handle search functionality */
+        job-card {
+            display: block; /* Show all jobs */
+        }
+        /* Full-width image styling */
+        .full-width-image {
+            width: 100%;
+            height: auto;
+        }
+        /* Prevent horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
+        /* Style adjustments for featured clients */
+        #featured-clients .card {
+            width: 100%;
+            margin: 0 auto;/
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Plataforma de Empleo</a>
+        <a class="navbar-brand" href="#">
+            <img src="Logo1.jpg" width="200" height="90" alt="EMPLEOFINDER Logo">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#cliente">Cliente</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#trabajador">Trabajador</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#administrativo">Administrativo</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userTypeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tipo de Usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userTypeDropdown">
+                        <a class="dropdown-item" href="Cliente.html">Cliente</a>
+                        <a class="dropdown-item" href="trabajador.html">Trabajador</a>
+                        <a class="dropdown-item" href="administrativo.html">Administrativo</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -33,56 +56,216 @@
 
     <!-- Header -->
     <header class="jumbotron text-center bg-primary text-white">
-        <h1 class="display-4">Bienvenido a la Plataforma de Empleo</h1>
-        <p class="lead">Conectando profesionales con oportunidades laborales</p>
+        <h1 class="display-4">Bienvenido a EMPLEOFINDER</h1>
+        <p class="lead">Directos y al punto.</p>
     </header>
 
     <!-- Main Content -->
     <main class="container">
-        <div class="row">
+        <!-- Search Form -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <form id="search-form" class="form-inline my-2 my-lg-0">
+                    <input id="search-input" name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar empleos" aria-label="Buscar">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="button" onclick="searchJobs()">Buscar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row text-center">
             <!-- Cliente Section -->
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <h2 class="card-title">Cliente</h2>
                         <p class="card-text">Encuentra a los mejores profesionales para tu proyecto.</p>
-                        <a href="login.html" class="btn btn-primary">Acceder como Cliente</a>
+                        <a href="cliente.html" class="btn btn-primary">Acceder como Cliente</a>
                     </div>
                 </div>
             </div>
             <!-- Trabajador Section -->
             <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body text-center">
+                <div class="card mb-4" id="trabajador">
+                    <div class="card-body">
                         <h2 class="card-title">Trabajador</h2>
                         <p class="card-text">Busca oportunidades laborales que se ajusten a tus habilidades.</p>
-                        <a href="login.html" class="btn btn-primary">Acceder como Trabajador</a>
+                        <a href="trabajador.html" class="btn btn-primary">Acceder como Trabajador</a>
                     </div>
                 </div>
             </div>
             <!-- Administrativo Section -->
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <h2 class="card-title">Administrativo</h2>
                         <p class="card-text">Gestiona la plataforma de empleo y controla los accesos.</p>
-                        <a href="login.html" class="btn btn-primary">Acceder como Administrativo</a>
+                        <a href="administrativo.html" class="btn btn-primary">Acceder como Administrativo</a>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
 
+        <!-- Featured Jobs Section -->
+        <section id="featured-jobs">
+            <h2 class="text-center my-4">Empleos Destacados</h2>
+            <div class="row" id="job-list">
+                <!-- Job Cards -->
+                <div class="col-md-4 job-card" data-title="Desarrollador Web">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Desarrollador Web</h5>
+                            <p class="card-text">Empresa XYZ - Medellín</p>
+                            <p class="card-text"><small class="text-muted">Publicado hace 3 días</small></p>
+                            <a href="trabajador.html" class="btn btn-primary">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 job-card" data-title="Diseñador Gráfico">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Diseñador Gráfico</h5>
+                            <p class="card-text">Empresa ABC - Bogotá</p>
+                            <p class="card-text"><small class="text-muted">Publicado hace 5 días</small></p>
+                            <a href="trabajador.html" class="btn btn-primary">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 job-card" data-title="Analista de Datos">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Analista de Datos</h5>
+                            <p class="card-text">Empresa DEF - Cali</p>
+                            <p class="card-text"><small class="text-muted">Publicado hace 2 días</small></p>
+                            <a href="trabajador.html" class="btn btn-primary">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 job-card" data-title="Gerente de Proyecto">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Gerente de Proyecto</h5>
+                            <p class="card-text">Empresa GHI - Barranquilla</p>
+                            <p class="card-text"><small class="text-muted">Publicado hace 1 semana</small></p>
+                            <a href="trabajador.html" class="btn btn-primary">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 job-card" data-title="Administrador de Sistemas">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Administrador de Sistemas</h5>
+                            <p class="card-text">Empresa JKL - Medellín</p>
+                            <p class="card-text"><small class="text-muted">Publicado hace 4 días</small></p>
+                            <a href="trabajador.html" class="btn btn-primary">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 job-card" data-title="Marketing Digital">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketing Digital</h5>
+                            <p class="card-text">Empresa MNO - Bogotá</p>
+                            <p class="card-text"><small class="text-muted">Publicado hace 1 día</small></p>
+                            <a href="trabajador.html" class="btn btn-primary">Aplicar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Featured Clients Section -->
+<section id="featured-clients" class="my-4">
+    <h2 class="text-center my-4">Clientes Destacados</h2>
+    <div class="row">
+        <!-- Client Card A -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Cliente A</h5>
+                    <p class="card-text">Descripción breve del Cliente A.</p>
+                    <button class="btn btn-primary" onclick="toggleDetails('clientA-details')">Ver Más</button>
+                    <div id="clientA-details" class="client-details" style="display: none;">
+                        <p><strong>Descripción:</strong> Cliente A es una empresa innovadora en el sector tecnológico, especializada en desarrollo de software y soluciones digitales personalizadas.</p>
+                        <p><strong>Compensación:</strong> $5,000 - $10,000 por proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Client Card B -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Cliente B</h5>
+                    <p class="card-text">Descripción breve del Cliente B.</p>
+                    <button class="btn btn-primary" onclick="toggleDetails('clientB-details')">Ver Más</button>
+                    <div id="clientB-details" class="client-details" style="display: none;">
+                        <p><strong>Descripción:</strong> Cliente B es una firma de consultoría con experiencia en la implementación de estrategias de marketing y desarrollo empresarial.</p>
+                        <p><strong>Compensación:</strong> $3,000 - $7,000 por proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Client Card C -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Cliente C</h5>
+                    <p class="card-text">Descripción breve del Cliente C.</p>
+                    <button class="btn btn-primary" onclick="toggleDetails('clientC-details')">Ver Más</button>
+                    <div id="clientC-details" class="client-details" style="display: none;">
+                        <p><strong>Descripción:</strong> Cliente C es una empresa de diseño gráfico que ofrece servicios creativos para campañas publicitarias y branding corporativo.</p>
+                        <p><strong>Compensación:</strong> $4,000 - $8,000 por proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleDetails(id) {
+        var details = document.getElementById(id);
+        if (details.style.display === 'none') {
+            details.style.display = 'block';
+        } else {
+            details.style.display = 'none';
+        }
+    }
+</script>
+
+
+</section>
+</main>
+<!-- Imagen al final de la página -->
+<div class="text-center" style="margin-top: 20px;">
+    <img src="Image1.png" alt="Descripción de la imagen" class="full-width-Image1" height="150" >
+</div>
     <!-- Footer -->
     <footer class="bg-light text-center py-4">
-        <p>&copy; 2024 Plataforma de Empleo. Todos los derechos reservados.</p>
+        <p>&copy; 2024 EMPLEOFINDER. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <!-- Custom JS -->
+ <script>
+    function searchJobs() {
+        var input = document.getElementById('search-input').value.toLowerCase();
+        var jobCards = document.querySelectorAll('.job-card');
+
+        jobCards.forEach(function(card) {
+            var title = card.getAttribute('data-title').toLowerCase();
+            if (title.includes(input)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+<!-- Custom JS -->
+<script src="ParteJava.js"></script>
 </body>
 </html>
-
 
