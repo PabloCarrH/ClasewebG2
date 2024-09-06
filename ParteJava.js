@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('input[name="search"]');
-    const jobCards = document.querySelectorAll('.job-card');
+    const jobCards = document.querySelectorAll('.job-card'); 
 
     searchInput.addEventListener('input', (event) => {
         const query = event.target.value.toLowerCase();
