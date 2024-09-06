@@ -1,37 +1,213 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
 }
 
-.navbar-brand img {
-    margin-right: 10px;
+body {
+    line-height: 1.6;
+    background-color: #f4f7f9;
 }
 
-.jumbotron {
-    background-color: #007BFF;
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0073ff;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-btn {
+    background-color: white;
+    color: #0073ff;
+    border: 1px solid #0073ff;
+}
+
+.register-btn {
+    background-color: #0073ff;
     color: white;
-    padding: 40px 20px;
+    border-radius: 5px;
 }
 
-.card {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #eaf3ff;
 }
 
-.card-title {
-    color: #007BFF;
+.hero h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.card-text {
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #0073ff;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #0073ff;
+    border: 1px solid #0073ff;
+    border-radius: 5px;
+}
+
+/* Servicios Section */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Cómo Funciona Section */
+.how-it-works {
+    background-color: #eaf3ff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.step {
+    width: 250px;
+}
+
+.step-number {
+    display: inline-block;
+    background-color: #0073ff;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     margin-bottom: 15px;
 }
 
-.footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
+/* Testimonios Section */
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.footer p {
-    margin: 0;
+.testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
 }
+
+.testimonials-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.testimonial-card h3 {
+    background-color: #0073ff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: gold;
+}
+
 
 
