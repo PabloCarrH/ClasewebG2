@@ -210,4 +210,208 @@ body {
 }
 
 
+/* Contenedor del formulario iniciar sesion*/
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Para que el contenedor esté centrado verticalmente */
+}
 
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-box p {
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input {
+    margin-right: -110px;
+}
+
+.remember-me label {
+    white-space: nowrap;/* Evita que el texto se divida en dos líneas */
+}
+
+.loginbtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.loginbtn:hover {
+    background-color: #005bb5;
+}
+
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+/* Contenedor del formulario registro*/
+.container {
+    width: 90%;
+    max-width: 600px; /* Reducir el ancho máximo para un diseño más compacto */
+    margin: 2rem auto;
+    padding: 1.5rem; /* Reducir el padding */
+    background-color: #fff;
+    border-radius: 8px; /* Redondear bordes un poco menos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducir sombra */
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #0073ff;
+    margin-bottom: 1rem;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px; /* Reducir el padding de las pestañas */
+    border: 1px solid #0073ff;
+    background: #fff;
+    color: #0073ff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.9rem; /* Reducir tamaño de fuente */
+    transition: background 0.3s, color 0.3s;
+    border-bottom: 2px solid transparent; /* Ensure space for border */
+}
+
+.tab-button.active {
+    background: #0073ff;
+    color: #fff;
+    border-bottom: 2px solid #0073ff; /* Highlight active tab */
+}
+
+.tab-button:hover {
+    background: #f0f0f0;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem; /* Reducir tamaño de fuente del título */
+    color: #000;
+}
+
+label {
+    display: block;
+    margin: 0.25rem 0 0.25rem;
+    font-weight: bold;
+    color: #000; /* Etiquetas en color negro */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="text"].number,
+textarea {
+    width: 100%;
+    padding: 0.5rem; /* Reducir padding */
+    margin-bottom: 0.75rem; /* Reducir margen inferior */
+    border: 1px solid #ccc; /* Borde gris claro para los campos */
+    border-radius: 4px; /* Redondear bordes un poco menos */
+    font-size: 0.9rem; /* Reducir tamaño de fuente */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    box-sizing: border-box; /* Asegurar que el padding esté incluido en el ancho total */
+}
+
+textarea {
+    height: 80px; /* Reducir altura del área de texto */
+    resize: vertical;
+}
+
+button {
+    background-color: #0073ff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem; /* Reducir padding */
+    border-radius: 4px; /* Redondear bordes un poco menos */
+    cursor: pointer;
+    font-size: 0.9rem; /* Reducir tamaño de fuente */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
