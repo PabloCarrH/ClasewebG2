@@ -320,7 +320,7 @@ body {
 }
 /* Contenedor del formulario registro*/
 .container {
-    width: 90%;
+    width: 50%;
     max-width: 600px; /* Reducir el ancho máximo para un diseño más compacto */
     margin: 2rem auto;
     padding: 1.5rem; /* Reducir el padding */
