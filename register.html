@@ -37,7 +37,6 @@
         </form>
     </div>
 
-    <script src="js/Registro.js"></script>
 </body>
 </html>
 
@@ -46,25 +45,24 @@
             <form>
                 <label for="name-client">Nombre:</label>
                 <input type="text" id="name-client" name="name-client" placeholder="Ana García" required>
-
+    
                 <label for="email-client">Correo Electrónico:</label>
                 <input type="email" id="email-client" name="email-client" placeholder="ana.garcia@example.com" required>
-
+    
                 <label for="password-client">Contraseña:</label>
                 <input type="password" id="password-client" name="password-client" placeholder="••••••••" required>
-
+    
                 <label for="dob-client">Fecha de Nacimiento:</label>
                 <input type="date" id="dob-client" name="dob-client" required>
-
+    
                 <label for="phone-client">Celular:</label>
                 <input type="tel" id="phone-client" name="phone-client" placeholder="+34 987 654 321" required>
-
-
+    
                 <button type="submit">Registrarse</button>
             </form>
         </div>
     </div>
-
+    <script src="js/Registro.js"></script>
     <script>
         function showForm(formId) {
             document.getElementById('professional-form').classList.remove('active');
@@ -75,5 +73,6 @@
             document.querySelector(`.tab-button[onclick="showForm('${formId}')"]`).classList.add('active');
         }
     </script>
+
 </body>
 </html>
