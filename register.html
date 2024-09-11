@@ -13,8 +13,9 @@
             <button class="tab-button" onclick="showForm('client')">Cliente</button>
         </div>
 
-        <div id="professional-form" class="form-container active">
+        <form id="professional-form" class="form-container active">
             <h2>Formulario Profesional</h2>
+
             <label for="name-professional">Nombre:</label>
             <input type="text" id="name-professional" name="name-professional" placeholder="Nombre" required>
 
@@ -30,9 +31,13 @@
             <label for="phone-professional">Celular:</label>
             <input type="tel" id="phone-professional" name="phone-professional" placeholder="Número de celular" required>
 
-
             <button type="submit">Registrarse</button>
-        </div>
+        </form>
+    </div>
+
+    <script src="js/Registro.js"></script>
+</body>
+</html>
 
         <div id="client-form" class="form-container">
             <h2>Registro para Clientes</h2>
