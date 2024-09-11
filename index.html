@@ -11,14 +11,20 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">ProClick</div>
-        <ul>
-            <li><a href="#services-section">Servicios</a></li>
-            <li><a href="#how-it-works-section">Cómo Funciona</a></li>
-            <li><a href="#testimonials-section">Opiniones</a></li>
-        </ul>
-        <div class="auth-buttons">
-            <button class="login-btn" onclick="window.location.href='login.html'">Iniciar Sesión</button>
-            <button class="register-btn" onclick="window.location.href='register.html'">Registrarse</button>
+         <!-- Botón hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#services-section">Servicios</a></li>
+                <li><a href="#how-it-works-section">Cómo Funciona</a></li>
+                <li><a href="#testimonials-section">Opiniones</a></li>
+                <li><button class="login-btn" onclick="window.location.href='login.html'">Iniciar Sesión</button></li>
+                <li><button class="register-btn" onclick="window.location.href='register.html'">Registrarse</button></li>
+            </ul>
         </div>
     </nav>
 
