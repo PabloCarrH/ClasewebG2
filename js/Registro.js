@@ -12,11 +12,23 @@ registerForm.addEventListener('submit', (e) => {
     const isUserRegistered = Users.find(user => user.email === email)
     
     if (isUserRegistered) {
-        return alert('El usuario ya está registrado')
+        return Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El usuario ya está registrado',
+            confirmButtonText: 'OK'
+        });
     }
 
     Users.push({ name:name, email:email, password:password, date:date, celular:celular })
     localStorage.setItem('users', JSON.stringify(Users))
-    alert('Registro Exitoso')
-    window.location.href= 'login.html'
+    
+    Swal.fire({
+        icon: 'success',
+        title: 'Registro Exitoso',
+        text: 'El registro se ha completado correctamente',
+        confirmButtonText: 'Ir a login'
+    }).then(() => {
+        window.location.href = 'login.html';
+    });
 })
