@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-container { display: none; }
+        .form-container.active { display: block; }
+        .tab-button.active { background-color: #007bff; color: white; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -82,13 +87,18 @@
 
     <script>
         function showForm(formId) {
+            // Ocultar todos los formularios
             document.getElementById('professional-form').classList.remove('active');
             document.getElementById('client-form').classList.remove('active');
+            
+            // Mostrar el formulario correspondiente
+            document.getElementById(`${formId}-form`).classList.add('active');
+            
+            // Actualizar el estado de los botones
             document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
-
-            document.getElementById(${formId}-form).classList.add('active');
-            document.querySelector(.tab-button[onclick="showForm('${formId}')"]).classList.add('active');
+            document.querySelector(`.tab-button[onclick="showForm('${formId}')"]`).classList.add('active');
         }
     </script>
 </body>
 </html>
+
