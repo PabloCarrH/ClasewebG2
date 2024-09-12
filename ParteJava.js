@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 let currentIndex = 0;
 
-function slide(direction) {
+  function slide(direction) {
     const cards = document.getElementById('service-cards');
     const cardWidth = cards.querySelector('.service-card').offsetWidth + 20; // Ancho de la tarjeta + margen
     const visibleCards = 3; // Número de tarjetas visibles
