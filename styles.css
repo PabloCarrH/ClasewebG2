@@ -320,7 +320,7 @@ body {
 }
 /* Contenedor del formulario registro*/
 .container {
-    width: 90%;
+    width: 50%;
     max-width: 600px; /* Reducir el ancho máximo para un diseño más compacto */
     margin: 2rem auto;
     padding: 1.5rem; /* Reducir el padding */
@@ -414,4 +414,344 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+/*dashboardPro*/
+strong {
+    color: #0073ff;
+}
+
+/* Estilos para el encabezado (barra superior) */
+.main-header {
+    background-color: #0073ff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-name strong {
+    color: white; /* Cambia el color del nombre a blanco */
+}
+
+
+.user-name p {
+    margin: 0;
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center; /* Centra el contenido de .search-bar horizontalmente */
+    flex: 1;
+    max-width: 400px; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 20px; /* Ajusta el margen si es necesario */
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Añade un borde para mejor visibilidad */
+    margin-right: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff; /* Ajusta el color del botón */
+    color: white;
+    cursor: pointer;
+}
+
+.nav-icons .icon {
+    margin-left: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Sección "Sobre Mí" */
+.about-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+.about-section h3 {
+    color: black;
+    margin-bottom: 15px;
+    font-size: 24px;
+    
+}
+
+.about-section p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* Sección "Servicios" */
+.services-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px; /* Aplicar mismo tamaño de letra que en las reseñas */
+    color: #333; /* Color de texto oscuro */
+}
+
+.services-section h3 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.service-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.service-content strong {
+    font-size: 18px; /* Mismo tamaño que en las reseñas */
+    color: black;
+}
+
+.service-content p {
+    font-size: 14px; /* Mismo tamaño que en las reseñas */
+    color: #333; /* Color de texto oscuro */
+}
+
+/* Columna derecha (Reseñas) */
+.review-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px; /* Aplicar mismo tamaño de letra */
+    color: #333; /* Color de texto oscuro */
+}
+
+.review-section h2 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.review {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.review-icon {
+    margin-right: 15px;
+}
+
+.review-icon i {
+    font-size: 40px;
+    color: #0073ff;
+}
+
+.review-content strong {
+    font-size: 18px; /* Mismo tamaño que en la sección de servicios */
+    color: black;
+}
+
+.stars {
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.stars i {
+    font-size: 16px;
+}
+
+.review-content p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Ajustes adicionales para el contenedor */
+.sidebar-left {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-right {
+    width: 60%;
+}
+/* Estilos para pantallas pequeñas (teléfonos móviles) */
+@media only screen and (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        padding: 0 15px;
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Hero Section */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Servicios Section */
+    .service-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    /* Cómo Funciona Section */
+    .steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    /* Testimonios Section */
+    .testimonials-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        width: 100%;
+    }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media only screen and (max-width: 1024px) {
+    /* Ajustar ancho de contenedores */
+    .services, .how-it-works, .testimonials {
+        padding: 40px 10px;
+    }
+
+    /* Ajustar secciones */
+    .services h2, .how-it-works h2, .testimonials h2 {
+        font-size: 24px;
+    }
+
+    .service-cards {
+        gap: 10px;
+    }
+}
+/* Estilos del botón hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Ocultar el menú por defecto en pantallas pequeñas */
+.menu {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .auth-buttons {
+        display: none; /* Opcional: oculta los botones de autenticación en móvil */
+    }
+
+    .menu.show {
+        display: flex;
+    }
 }
