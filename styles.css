@@ -110,6 +110,7 @@ body {
 .services {
     text-align: center;
     padding: 50px 20px;
+    position: relative;
 }
 
 .services h2 {
@@ -117,24 +118,62 @@ body {
     margin-bottom: 40px;
 }
 
+/* Contenedor del carrusel */
+.carousel-container {
+    overflow: hidden;
+    max-width: 100%; /* Ocupa el ancho completo de la pantalla */
+    position: relative;
+    margin: 0 auto; /* Centra el carrusel */
+}
+
+/* Tarjetas del carrusel */
 .service-cards {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    transition: transform 0.5s ease;
+    will-change: transform;
 }
 
 .service-card {
+    flex: 0 0 calc(25% - 20px);
+    margin: 0 10px; /* Espaciado entre tarjetas */
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave para un efecto bonito */
+    text-align: center;
+    transition: transform 0.3s ease; /* Animación suave para el hover */
+}
+
+.service-card:hover {
+    transform: scale(1.05); /* Agranda la tarjeta ligeramente cuando pasas el mouse */
 }
 
 .service-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+/* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 100;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 /* Cómo Funciona Section */
