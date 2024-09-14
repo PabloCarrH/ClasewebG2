@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <style>
+        .form-container { display: none; }
+        .form-container.active { display: block; }
+        .tab-button.active { background-color: #007bff; color: white; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,9 +18,8 @@
             <button class="tab-button" onclick="showForm('client')">Cliente</button>
         </div>
 
-        <form id="professional-form" class="form-container active">
+        <div id="professional-form" class="form-container active">
             <h2>Formulario Profesional</h2>
-
             <label for="name-professional">Nombre:</label>
             <input type="text" id="name-professional" name="name-professional" placeholder="Nombre" required>
 
@@ -33,46 +35,70 @@
             <label for="phone-professional">Celular:</label>
             <input type="tel" id="phone-professional" name="phone-professional" placeholder="Número de celular" required>
 
-            <button type="submit">Registrarse</button>
-        </form>
-    </div>
+            <label for="service-professional">Servicio que ofreces:</label>
+            <input type="text" id="service-professional" name="service-professional" placeholder="Servicio" required>
 
-</body>
-</html>
+            <label for="description-professional">Descripción del servicio:</label>
+            <textarea id="description-professional" name="description-professional" placeholder="Descripción del servicio" required></textarea>
+
+            <label for="experience-professional">Experiencia:</label>
+            <input type="text" id="experience-professional" name="experience-professional" placeholder="Experiencia" required>
+
+            <label for="certifications-professional">Certificaciones:</label>
+            <input type="text" id="certifications-professional" name="certifications-professional" placeholder="Certificaciones" required>
+
+            <label for="rate-professional">Tarifa:</label>
+            <input type="text" id="rate-professional" name="rate-professional" placeholder="50" pattern="\d+" title="Ingrese un valor numérico" required>
+
+            <label for="availability-professional">Disponibilidad:</label>
+            <input type="text" id="availability-professional" name="availability-professional" placeholder="Disponibilidad" required>
+
+            <button type="submit">Registrarse</button>
+        </div>
 
         <div id="client-form" class="form-container">
             <h2>Registro para Clientes</h2>
             <form>
                 <label for="name-client">Nombre:</label>
                 <input type="text" id="name-client" name="name-client" placeholder="Ana García" required>
-    
+
                 <label for="email-client">Correo Electrónico:</label>
                 <input type="email" id="email-client" name="email-client" placeholder="ana.garcia@example.com" required>
-    
+
                 <label for="password-client">Contraseña:</label>
                 <input type="password" id="password-client" name="password-client" placeholder="••••••••" required>
-    
+
                 <label for="dob-client">Fecha de Nacimiento:</label>
                 <input type="date" id="dob-client" name="dob-client" required>
-    
+
                 <label for="phone-client">Celular:</label>
                 <input type="tel" id="phone-client" name="phone-client" placeholder="+34 987 654 321" required>
-    
+
+                <label for="address-client">Dirección:</label>
+                <input type="text" id="address-client" name="address-client" placeholder="Calle Falsa 123, Ciudad" required>
+
+                <label for="info-client">Información Adicional:</label>
+                <textarea id="info-client" name="info-client" placeholder="Comentarios adicionales, preferencias..." required></textarea>
+
                 <button type="submit">Registrarse</button>
             </form>
         </div>
     </div>
-    <script src="js/Registro.js"></script>
+
     <script>
         function showForm(formId) {
+            // Ocultar todos los formularios
             document.getElementById('professional-form').classList.remove('active');
             document.getElementById('client-form').classList.remove('active');
-            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
-
+            
+            // Mostrar el formulario correspondiente
             document.getElementById(`${formId}-form`).classList.add('active');
+            
+            // Actualizar el estado de los botones
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
             document.querySelector(`.tab-button[onclick="showForm('${formId}')"]`).classList.add('active');
         }
     </script>
-
 </body>
 </html>
+

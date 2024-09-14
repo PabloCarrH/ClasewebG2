@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 timer: 1500
             });
 
-            window.location.href = 'cliente.html';
+            window.location.href = 'dashboardPro.html';
         }
         // Si no se encuentra un usuario válido
         else {
