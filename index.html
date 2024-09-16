@@ -6,24 +6,26 @@
     <title>ProClick - Profesionales a un Click</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            padding-top: 30px; /* Ajusta este valor según sea necesario */
+        }
         #visit-counter {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px 0;
-            background-color: #4CAF50;
+            right: 0;
+            padding: 5px 10px;
+            background-color: #425eff;
             color: white;
-            font-size: 18px;
-            text-align: center;
+            font-size: 14px;
+            text-align: right;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom-left-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div id="visit-counter"></div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">ProClick</div>
