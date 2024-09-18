@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProClick - Profesionales a un Click</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding-top: 30px; /* Ajusta este valor según sea necesario */
+        }
+        #visit-counter {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 5px 10px;
+            background-color: #425eff;
+            color: white;
+            font-size: 14px;
+            text-align: right;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom-left-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="visit-counter"></div>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">ProClick</div>
@@ -38,35 +56,39 @@
         </div>
     </section>
 
-    <!-- Servicios Section -->
+     <!-- Servicios Section -->
     <section id="services-section" class="services">
         <h2>Nuestros Servicios</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <h3>Limpieza</h3>
-                <p>Servicios de limpieza profesional para hogares y empresas.</p>
-            </div>
-            <div class="service-card">
-                <h3>Reparaciones</h3>
-                <p>Reparaciones y mantenimiento general para tu hogar.</p>
-            </div>
-            <div class="service-card">
-                <h3>Jardinería</h3>
-                <p>Diseño y mantenimiento de jardines y áreas verdes.</p>
-            </div>
-            <div class="service-card">
-                <h3>Electricidad</h3>
-                <p>Instalaciones y reparaciones eléctricas seguras.</p>
-            </div>
-            <div class="service-card">
-                <h3>Plomería</h3>
-                <p>Soluciones para todos tus problemas de plomería.</p>
-            </div>
-            <div class="service-card">
-                <h3>Pintura</h3>
-                <p>Servicios de pintura interior y exterior.</p>
+        <div class="carousel-container">
+            <div class="service-cards" id="service-cards">
+                <div class="service-card">
+                    <h3>Limpieza</h3>
+                    <p>Servicios de limpieza profesional para hogares y empresas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Reparaciones</h3>
+                    <p>Reparaciones y mantenimiento general para tu hogar.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Jardinería</h3>
+                    <p>Diseño y mantenimiento de jardines y áreas verdes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Electricidad</h3>
+                    <p>Instalaciones y reparaciones eléctricas seguras.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Plomería</h3>
+                    <p>Soluciones para todos tus problemas de plomería.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Pintura</h3>
+                    <p>Servicios de pintura interior y exterior.</p>
+                </div>
             </div>
         </div>
+        <button class="prev" onclick="slide(-1)">&#10094;</button>
+        <button class="next" onclick="slide(1)">&#10095;</button>
     </section>
 
     <!-- Cómo Funciona Section -->
@@ -115,8 +137,8 @@
             </div>
         </div>
     </section>
-<div id="visit-counter" style="font-size: 24px; color: green; margin-top: 20px;"></div>
-<script src="js/index.js"></script>
-<script src="ParteJava.js"></script>
+   
+    <script src="js/index.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,29 @@
+// Define la función `slide` fuera del bloque DOMContentLoaded
+let currentIndex = 0;
+
+function slide(direction) {
+    const cards = document.getElementById('service-cards');
+    if (!cards) return; // Verifica que `cards` exista
+
+    const cardWidth = cards.querySelector('.service-card').offsetWidth + 20; // Ancho de la tarjeta + margen
+    const visibleCards = 3; // Número de tarjetas visibles
+    const totalCards = cards.children.length;
+    const maxIndex = totalCards - visibleCards;
+
+    // Actualiza el índice actual en función de la dirección
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    } else if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+    }
+
+    // Calcula el desplazamiento y aplica la transformación
+    const offset = -currentIndex * cardWidth;
+    cards.style.transform = `translateX(${offset}px)`;
+}
+
+// Maneja el evento DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     // Código para el filtrado de tarjetas
     const searchInput = document.querySelector('input[name="search"]');
@@ -30,5 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         console.error('No se encontraron los elementos del menú o el botón hamburguesa.');
+    }
+
+    // Añade event listeners para las flechas del carrusel (si tienes botones para ello)
+    const prevButton = document.querySelector('.prev'); // Asegúrate de tener estos elementos en tu HTML
+    const nextButton = document.querySelector('.next');
+
+    if (prevButton) {
+        prevButton.addEventListener('click', () => slide(-1)); // Desliza hacia la izquierda
+    }
+    if (nextButton) {
+        nextButton.addEventListener('click', () => slide(1)); // Desliza hacia la derecha
     }
 });
