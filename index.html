@@ -5,45 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProClick - Profesionales a un Click</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            padding-top: 30px; /* Ajusta este valor según sea necesario */
-        }
-        #visit-counter {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 5px 10px;
-            background-color: #425eff;
-            color: white;
-            font-size: 14px;
-            text-align: right;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            border-bottom-left-radius: 5px;
-        }
-    </style>
 </head>
 <body>
+    <!-- Visitas -->
     <div id="visit-counter"></div>
+    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">ProClick</div>
-         <!-- Botón hamburguesa -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu">
-            <ul>
+        <!-- Agregamos un contenedor que envuelve los enlaces de navegación -->
+        <div class="nav-container">
+            <ul class="nav-links">
                 <li><a href="#services-section">Servicios</a></li>
                 <li><a href="#how-it-works-section">Cómo Funciona</a></li>
                 <li><a href="#testimonials-section">Opiniones</a></li>
-                <li><button class="login-btn" onclick="window.location.href='login.html'">Iniciar Sesión</button></li>
-                <li><button class="register-btn" onclick="window.location.href='register.html'">Registrarse</button></li>
+                <!-- Los botones de autenticación se agregan dentro de la lista en modo responsive -->
+                <li class="auth-links">
+                    <button class="login-btn" onclick="window.location.href='login.html'">Iniciar Sesión</button>
+                    <button class="register-btn" onclick="window.location.href='register.html'">Registrarse</button>
+                </li>
             </ul>
         </div>
+        <!-- Botón de hamburguesa -->
+        <button class="hamburger" id="hamburger">&#9776;</button>
     </nav>
 
     <!-- Hero Section -->
@@ -56,7 +40,7 @@
         </div>
     </section>
 
-     <!-- Servicios Section -->
+    <!-- Servicios Section -->
     <section id="services-section" class="services">
         <h2>Nuestros Servicios</h2>
         <div class="carousel-container">
@@ -137,8 +121,9 @@
             </div>
         </div>
     </section>
-   
-    <script src="js/index.js"></script>
 
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+
