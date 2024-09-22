@@ -46,17 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('No se encontraron elementos de búsqueda o tarjetas de trabajo.');
     }
 
-    // Código para el botón de menú hamburguesa
-    const menuButton = document.querySelector('.hamburger'); // Selecciona el botón hamburguesa
-    const menu = document.querySelector('.menu'); // Selecciona el menú que quieres mostrar/ocultar
-
-    if (menuButton && menu) { // Verifica si ambos elementos existen
-        menuButton.addEventListener('click', () => {
-            menu.classList.toggle('show'); // Cambia la visibilidad del menú al hacer clic
-        });
-    } else {
-        console.error('No se encontraron los elementos del menú o el botón hamburguesa.');
-    }
 
     // Añade event listeners para las flechas del carrusel (si tienes botones para ello)
     const prevButton = document.querySelector('.prev'); // Asegúrate de tener estos elementos en tu HTML
