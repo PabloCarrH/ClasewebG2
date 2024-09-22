@@ -366,6 +366,7 @@ body {
         max-width: 250px;
     }
 }
+
 /* Contenedor del formulario iniciar sesion*/
 .login-container {
     display: flex;
