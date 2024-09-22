@@ -69,3 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.addEventListener('click', () => slide(1)); // Desliza hacia la derecha
     }
 });
+
+// boton hamburguesa
+document.getElementById("hamburger").addEventListener("click", function() {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+});
+
