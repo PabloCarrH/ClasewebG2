@@ -10,7 +10,6 @@ body {
     background-color: #f4f7f9;
     padding-top: 80px; 
 }
-
 /* Navbar */
 .navbar {
     display: flex;
@@ -24,7 +23,6 @@ body {
     width: 100%;     
     z-index: 1000;   
 }
-
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
