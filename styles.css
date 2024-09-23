@@ -339,68 +339,57 @@ body {
     background-color: #f0f0f0; 
     color: #0056b3; 
 }
-
-
 /* Estilo para el footer */
 .footer {
-    background-color: #1c1f23; /* Fondo oscuro */
-    color: #fff;
+    background-color: #1a1a1a;
+    color: #ffffff;
     padding: 40px 20px;
-    font-size: 14px;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye espacio uniformemente entre columnas */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    align-items: flex-start;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centra el contenido */
+    gap: 40px; /* Espacio entre columnas */
 }
 
 .footer-column {
-    flex: 1;
-    margin-bottom: 20px;
-    min-width: 200px;
+    flex: 1; /* Asegura que las columnas tengan tamaños proporcionales */
+    min-width: 220px; /* Ancho mínimo para mantener la estructura */
 }
 
 .footer-column h4 {
+    margin-bottom: 20px;
     font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #fff;
 }
 
-.footer-column p,
-.footer-column ul,
-.footer-column li {
+.footer-column p, .footer-column ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.footer-column ul {
-    margin-top: 10px;
-}
-
-.footer-column li {
+.footer-column ul li {
     margin-bottom: 10px;
 }
 
-.footer-column a {
+.footer-column ul li a {
     color: #ffffff;
     text-decoration: none;
 }
 
-.footer-column a:hover {
+.footer-column ul li a:hover {
     text-decoration: underline;
 }
-
 /* --- Responsive --- */
 @media (max-width: 768px) {
     /* Ajuste de navbar para móvil */
     .hamburger {
         display: block;
     }
-
     /* Ocultar enlaces de navegación inicialmente */
     .nav-links {
         display: none;
@@ -463,8 +452,25 @@ body {
         width: 100%;
         max-width: 350px; 
     }
-}
+     .footer-container {
+        justify-content: space-between;
+    }
 
+    .footer-column {
+        flex: 0 1 calc(50% - 40px); /* 2 columnas por fila con 40px de espacio entre ellas */
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .footer-column {
+        flex: 0 1 100%; /* Una columna por fila */
+        text-align: center;
+    }
+
+    .footer-container {
+        gap: 20px; /* Reducimos el espacio entre columnas en pantallas pequeñas */
+    }
+}
 /* Contenedor del formulario iniciar sesion*/
 .login-container {
     display: flex;
