@@ -92,17 +92,23 @@ body {
 
 /* Visitas */
 #visit-counter {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
-    background-color: #425eff;
-    color: white;
-    font-size: 14px;
-    text-align: right;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 5px;
+    margin-top: 40px; /* Espacio superior para separarlo de las opiniones */
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Fondo suave */
+    color: #333; /* Texto oscuro para contraste */
+    font-size: 18px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#visit-counter p {
+    margin: 0;
+}
+
+#visit-count {
+    font-weight: bold;
+    color: #0073ff; /* Resaltar el número de visitas */
 }
 
 /* Hero Section */
