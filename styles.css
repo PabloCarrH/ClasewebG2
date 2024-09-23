@@ -303,6 +303,96 @@ body {
 .stars {
     color: gold;
 }
+/* Estilo para la sección de llamada a la acción (CTA) */
+.cta-section {
+    background-color: #007bff; /* Fondo azul */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px; 
+    background-color: #fff; 
+    color: #007bff; 
+    border: 2px solid #fff; 
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0; 
+    color: #0056b3; 
+}
+
+
+/* Estilo para el footer */
+.footer {
+    background-color: #1c1f23; /* Fondo oscuro */
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-column p,
+.footer-column ul,
+.footer-column li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column ul {
+    margin-top: 10px;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
