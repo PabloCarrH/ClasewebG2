@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProClick - Profesionales a un Click</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">ProClick</div>
+        <!-- Agregamos un contenedor que envuelve los enlaces de navegación -->
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#services-section">Servicios</a></li>
+                <li><a href="#how-it-works-section">Cómo Funciona</a></li>
+                <li><a href="#testimonials-section">Opiniones</a></li>
+                <!-- Los botones de autenticación se agregan dentro de la lista en modo responsive -->
+                <li class="auth-links">
+                    <button class="login-btn" onclick="window.location.href='login.html'">Iniciar Sesión</button>
+                    <button class="register-btn" onclick="window.location.href='register.html'">Registrarse</button>
+                </li>
+            </ul>
+        </div>
+        <!-- Botón de hamburguesa -->
+        <button class="hamburger" id="hamburger">&#9776;</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Condiciones de Uso</h1>
+        <p>Bienvenido a ProClick. Al utilizar nuestra plataforma, aceptas los siguientes Términos y Condiciones de Uso. Estos términos rigen el uso de nuestro sitio web, la creación de perfiles profesionales, y la interacción entre usuarios.</p>
+        <div class="hero-buttons">
+            <button class="btn-primary" onclick="window.location.href='login.html'">Buscar Servicios</button>
+            <button class="btn-secondary" onclick="window.location.href='login.html'">Ofrecer Servicios</button>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="services-section" class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="carousel-container">
+            <div class="service-cards" id="service-cards">
+                <div class="service-card">
+                    <h3>Limpieza</h3>
+                    <p>Servicios de limpieza profesional para hogares y empresas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Reparaciones</h3>
+                    <p>Reparaciones y mantenimiento general para tu hogar.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Jardinería</h3>
+                    <p>Diseño y mantenimiento de jardines y áreas verdes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Electricidad</h3>
+                    <p>Instalaciones y reparaciones eléctricas seguras.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Plomería</h3>
+                    <p>Soluciones para todos tus problemas de plomería.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Pintura</h3>
+                    <p>Servicios de pintura interior y exterior.</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="slide(-1)">&#10094;</button>
+        <button class="next" onclick="slide(1)">&#10095;</button>
+    </section>
+
+    <!-- Cómo Funciona Section -->
+    <section id="how-it-works-section" class="how-it-works">
+        <h2>Cómo Funciona</h2>
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Busca un servicio</h3>
+                <p>Explora nuestra amplia gama de servicios profesionales.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Elige un profesional</h3>
+                <p>Revisa perfiles, calificaciones y elige el profesional ideal.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Disfruta del servicio</h3>
+                <p>Recibe un servicio de calidad y califica tu experiencia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section id="testimonials-section" class="testimonials">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-cards">
+            <div class="testimonial-card">
+                <h3>M</h3>
+                <h4>María García <span>Cliente</span></h4>
+                <p>Excelente servicio, muy profesional y puntual. Totalmente recomendado.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-card">
+                <h3>C</h3>
+                <h4>Carlos Rodríguez <span>Profesional</span></h4>
+                <p>ProClick me ha ayudado a expandir mi negocio y conectar con nuevos clientes.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-card">
+                <h3>A</h3>
+                <h4>Ana Martínez <span>Cliente</span></h4>
+                <p>Encontré un electricista confiable en minutos. ¡Increíble plataforma!</p>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+    </section>
+    <!-- Visitas -->
+    <div id="visit-counter">
+        <p>Visitas a la página: <span id="visit-count">12345</span></p>
+    </div>
+     <!-- Sección final de llamada a la acción -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>¿Listo para comenzar?</h2>
+            <p>Únete a nuestra comunidad de profesionales y clientes satisfechos.</p>
+            <button class="cta-button" onclick="window.location.href='register.html'">Registrarse Ahora</button>
+        </div>
+    </section> 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>ProClick</h4>
+                <p>Conectando profesionales y clientes de manera fácil y segura.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Cómo Funciona</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="condiciones.html">Condiciones de uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <p>info@proclick.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
