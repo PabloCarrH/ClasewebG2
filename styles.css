@@ -236,10 +236,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .step {
     width: 250px;
+     margin-bottom: 20px;
 }
 
 .step-number {
@@ -268,6 +270,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .testimonial-card {
@@ -275,8 +278,10 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    width: calc(33.33% - 20px); 
+    margin-bottom: 20px; 
 }
+
 
 .testimonial-card h3 {
     background-color: #0073ff;
@@ -312,17 +317,14 @@ body {
         z-index: 1000;
     }
 
-    /* Mostrar enlaces cuando el botón de hamburguesa esté activo */
     .nav-links.active {
         display: flex;
     }
-
-    /* Ocultar botones de autenticación en la barra de navegación al estar desplegado */
+    
     .auth-buttons {
         display: none;
     }
 
-    /* Ajustar contenedor */
     .nav-container {
         flex-direction: column;
         align-items: flex-end;
@@ -345,25 +347,24 @@ body {
 
     /* Cómo Funciona Section centrada */
     .steps {
-        flex-direction: column;
+        flex-direction: column; 
         align-items: center;
-        gap: 20px;
     }
 
     .step {
         width: 100%;
-        max-width: 250px;
+        max-width: 350px;
     }
 
     /* Testimonios centrados */
     .testimonials-cards {
-        flex-direction: column;
+        flex-direction: column; 
         align-items: center;
     }
 
     .testimonial-card {
         width: 100%;
-        max-width: 250px;
+        max-width: 350px; 
     }
 }
 
