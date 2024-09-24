@@ -16,44 +16,55 @@
             <button class="tab-button" onclick="showForm('client')">Cliente</button>
         </div>
 
-        <!-- Formulario Profesional -->
-<div id="professional-form" class="form-container active">
-    <h2>Formulario Profesional</h2>
-    <form onsubmit="return false;">
-        <label for="name-professional">Nombre:</label>
-        <input type="text" id="name-professional" name="name-professional" placeholder="Nombre" required>
-    
-        <label for="email-professional">Correo electrónico:</label>
-        <input type="email" id="email-professional" name="email-professional" placeholder="email@example.com" required>
-    
-        <label for="password-professional">Contraseña:</label>
-        <input type="password" id="password-professional" name="password-professional" placeholder="Contraseña" required>
-    
-        <button type="submit" onclick="registerProfessional()">Registrarse</button>
-    </form>
-</div>
+        <div id="professional-form" class="form-container active">
+            <h2>Formulario Profesional</h2>
+            <label for="name-professional">Nombre:</label>
+            <input type="text" id="name-professional" name="name-professional" placeholder="Nombre" required>
+        
+            <label for="email-professional">Correo electrónico:</label>
+            <input type="email" id="email-professional" name="email-professional" placeholder="email@example.com" required>
+        
+            <label for="password-professional">Contraseña:</label>
+            <input type="password" id="password-professional" name="password-professional" placeholder="Contraseña" required>
+        
+            <button type="button" onclick="registerProfessional()">Registrarse</button>
+        </div>
+        
 
-<!-- Formulario Cliente -->
-<div id="client-form" class="form-container">
-    <h2>Registro para Clientes</h2>
-    <form onsubmit="return false;">
-        <label for="name-client">Nombre:</label>
-        <input type="text" id="name-client" name="name-client" placeholder="Ana García" required>
-
-        <label for="email-client">Correo Electrónico:</label>
-        <input type="email" id="email-client" name="email-client" placeholder="ana.garcia@example.com" required>
-
-        <label for="password-client">Contraseña:</label>
-        <input type="password" id="password-client" name="password-client" placeholder="••••••••" required>
-
-        <button type="submit" onclick="registerClient()">Registrarse</button>
-    </form>
-</div>
+        <div id="client-form" class="form-container">
+            <h2>Registro para Clientes</h2>
+            <form>
+                <label for="name-client">Nombre:</label>
+                <input type="text" id="name-client" name="name-client" placeholder="Ana García" required>
+        
+                <label for="email-client">Correo Electrónico:</label>
+                <input type="email" id="email-client" name="email-client" placeholder="ana.garcia@example.com" required>
+        
+                <label for="password-client">Contraseña:</label>
+                <input type="password" id="password-client" name="password-client" placeholder="••••••••" required>
+        
+                <button type="button" onclick="registerClient()">Registrarse</button>
+            </form>
+        </div>
         
     </div>
     </div>
         <a href="index.html" class="back-link">← Volver a la página principal</a>
     </div>
+    <script>
+        function showForm(formId) {
+            // Ocultar todos los formularios
+            document.getElementById('professional-form').classList.remove('active');
+            document.getElementById('client-form').classList.remove('active');
+            
+            // Mostrar el formulario correspondiente
+            document.getElementById(`${formId}-form`).classList.add('active');
+            
+            // Actualizar el estado de los botones
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            document.querySelector(`.tab-button[onclick="showForm('${formId}')"]`).classList.add('active');
+        }
+    </script>
     <script src="js/Registro.js"></script>
 </body>
 </html>

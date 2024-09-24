@@ -11,43 +11,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
 
-        // Obtener usuarios profesionales y clientes
-        const professionalUsers = JSON.parse(localStorage.getItem('users')) || [];
-        const clientUsers = JSON.parse(localStorage.getItem('clients')) || [];
-
-        // Buscar en la lista de profesionales
-        const validProfessional = professionalUsers.find(user => user.email === email && user.password === password);
-        // Buscar en la lista de clientes
-        const validClient = clientUsers.find(user => user.email === email && user.password === password);
-
-        // Si el usuario es un profesional
-        if (validProfessional) {
-            await Swal.fire({
-                icon: 'success',
-                title: `Bienvenido(a) ${validProfessional.name}`,
-                showConfirmButton: false,
-                timer: 1500
+        try {
+            const response = await fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password })
             });
 
-            window.location.href = 'dashboardPro.html';
-        }
-        // Si el usuario es un cliente
-        else if (validClient) {
-            await Swal.fire({
-                icon: 'success',
-                title: `Bienvenido(a) ${validClient.name}`,
-                showConfirmButton: false,
-                timer: 1500
-            });
+            const result = await response.json();
 
-            window.location.href = 'dashboardPro.html';
-        }
-        // Si no se encuentra un usuario válido
-        else {
+            if (response.ok) {
+                await Swal.fire({
+                    icon: 'success',
+                    title: `Bienvenido(a) ${result.name || ''}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+                // Redirigir según el tipo de usuario si es necesario
+                window.location.href = result.isProfessional ? 'dashboardPro.html' : 'dashboardClient.html';
+            } else {
+                await Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: result.message || 'Usuario y/o contraseña incorrectos',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
             await Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Usuario y/o contraseña incorrectos',
+                text: 'No se pudo conectar con el servidor',
                 confirmButtonText: 'Aceptar'
             });
         }
