@@ -13,15 +13,14 @@ CREATE TABLE users (
 
 -- Crear la tabla de publicaciones
 CREATE TABLE publicacion(
-	id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     contenido VARCHAR(255),
     confirmacion BOOLEAN,
-    contactotel VARCHAR(10),
+    contactotel VARCHAR(15), -- Aumentado para soportar códigos de área
     contactocorreo VARCHAR(100),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-
 
 -- Crear tabla para los profesionales
 CREATE TABLE usersProfesional (
@@ -34,7 +33,7 @@ CREATE TABLE usersProfesional (
     certificaciones VARCHAR(255),
     tarifa DECIMAL(10,2),
     disponibilidad VARCHAR(255),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- Crear tabla para los clientes
@@ -45,6 +44,8 @@ CREATE TABLE usersCliente (
     celular VARCHAR(10),
     direccion VARCHAR(255),
     informacionad VARCHAR(255),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-select* from usersCliente
+
+-- Mostrar datos de la tabla usersCliente
+SELECT * FROM usersCliente;

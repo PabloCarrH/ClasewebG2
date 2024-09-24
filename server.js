@@ -34,24 +34,35 @@ db.connect((err) => {
     console.log('Conexión a la base de datos MySQL establecida.');
 });
 
-// Registro de usuario
-app.post('/api/signup', (req, res) => {
-    const { name, email, password } = req.body;
+app.listen(3000, () => {
+    console.log('Servidor corriendo en el puerto 3000');
+});
 
-    if (!name || !email || !password) {
-        return res.status(400).json({ message: 'Todos los campos son obligatorios.' });
-    }
 
-    bcrypt.hash(password, 10, (err, hash) => {
-        if (err) return res.status(500).json({ error: err });
+// Registro de usuarios (profesionales y clientes)
+app.post('/api/register/user', async (req, res) => {
+    const { name, email, password, userType } = req.body;
 
-        const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
-        db.query(sql, [name, email, hash], (error, results) => {
-            if (error) {
-                return res.status(400).json({ error: 'Error al registrar el usuario.' });
+    // Verificar si el usuario ya existe
+    const sqlCheck = 'SELECT * FROM users WHERE email = ?';
+    db.query(sqlCheck, [email], async (error, results) => {
+        if (error) {
+            return res.status(500).json({ message: 'Error en la base de datos.' });
+        }
+        if (results.length > 0) {
+            return res.status(409).json({ message: 'El usuario ya está registrado.' });
+        }
+
+        // Cifrar la contraseña
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Insertar el nuevo usuario en la base de datos
+        const sqlInsert = 'INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)';
+        db.query(sqlInsert, [name, email, hashedPassword, userType], (err) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error al registrar el usuario.' });
             }
-
-            res.status(201).json({ message: 'Usuario registrado.' });
+            res.status(201).json({ message: 'Registro de usuario exitoso.' });
         });
     });
 });
