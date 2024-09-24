@@ -1,2 +1,19 @@
-para iniciar el proyecto y que genere el json
-npm init -y
+intalar:
+    -node.js
+    -mysql
+1) instlara mysql y workbench
+2) configuarar mysql para que su contraseña sea 1234 o en caso de escoger otra hay que cambiarlo en el server.js 
+    en la zona de  password " // Conexión a la base de datos
+                    const db = mysql.createConnection({
+                        host: 'localhost',
+                        user: 'root',
+                        password: '1234',
+                        database: 'web'
+                    });"
+3) instalar la bd con ayuda de workbench, se crea el apartado y despues se ejecuta el sql que esta en la carpeta 
+4) inatalar node.js 
+
+5)para iniciar el proyecto abrir la terminar de visual y generar el json pegando "npm init -y" en la terminal, en este caso ya esta el el json
+6) para intalar librerias ejecutar en la terminal "npm install express body-parser cors mysql2 bcrypt"
+7)para probar que todo funcione usar el comando de "Node server.js", te debe arrogar un mensaje en la terminal diciendo "Servidor corriendo en el puerto 3000
+Conexión a la base de datos MySQL establecida.", ya con eso prueba el login y el register 
