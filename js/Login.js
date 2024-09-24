@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 // Redirigir según el tipo de usuario si es necesario
-                window.location.href = result.isProfessional ? 'dashboardPro.html' : 'dashboardClient.html';
+                window.location.href = result.isProfessional ? 'dashboardPro.html' : 'dashboardPro.html';
             } else {
                 await Swal.fire({
                     icon: 'error',
