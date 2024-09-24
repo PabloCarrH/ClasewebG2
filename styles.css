@@ -118,6 +118,11 @@ body {
     padding: 50px 20px;
     background-color: #eaf3ff;
 }
+.heroC {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+}
 
 .hero h1 {
     font-size: 36px;
