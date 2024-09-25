@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Servicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="service-container">
+        <div class="service-box">
+            <h2>Formulario de Trabajo</h2>
+            <form id="service-form" action="#">
+                <div class="input-group">
+                    <label for="service">Servicio</label>
+                    <input type="text" id="service" name="service" placeholder="Escribe el servicio" required>
+                </div>
+                <div class="input-group">
+                    <label for="cost">Costo</label>
+                    <input type="number" id="cost" name="cost" placeholder="Escribe el costo" required>
+                </div>
+                <div class="input-group">
+                    <label for="start-date">Fecha de Inicio</label>
+                    <input type="date" id="start-date" name="start-date" required>
+                </div>
+                <div class="input-group">
+                    <label for="end-date">Fecha Final</label>
+                    <input type="date" id="end-date" name="end-date" required>
+                </div>
+                <div class="input-group">
+                    <label for="client-name">Nombre del Cliente</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Nombre del cliente" required>
+                </div>
+                <div class="input-group">
+                    <label for="provider-name">Nombre del Prestador de Servicio</label>
+                    <input type="text" id="provider-name" name="provider-name" placeholder="Nombre del prestador de servicio" required>
+                </div>
+                <div class="input-group buttons">
+                    <button type="submit" class="acceptbtn">Aceptar</button>
+                    <button type="button" class="rejectbtn" onclick="rejectJob()">Rechazar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/Service.js"></script>
+</body>
+</html>
