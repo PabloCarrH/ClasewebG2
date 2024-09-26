@@ -876,27 +876,27 @@ strong {
 
     /*boton oferta de trabajo*/
 }
-.offer-section {
-    text-align: center; /* Centrar el botón */
-    margin-top: 20px;
-}
-
-.offer-btn {
-    background-color: #0073ff; /* Color de fondo verde */
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px auto;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.offer-btn:hover {
-    background-color: #0073ff; /* Color más oscuro al pasar el cursor */
-}
+    .services-header {
+        display: flex;
+        justify-content: space-between; /* Distribuye el título y el botón */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .offer-btn {
+        background-color: #0073ff; /* Color de fondo verde */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .offer-btn:hover {
+        background-color: #0073ff; /* Color más oscuro al pasar el cursor */
+    }
 
 
 /* Ajustes adicionales para el contenedor */
