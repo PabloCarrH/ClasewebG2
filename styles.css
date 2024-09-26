@@ -882,7 +882,7 @@ strong {
 }
 
 .offer-btn {
-    background-color: #4CAF50; /* Color de fondo verde */
+    background-color: #0073ff; /* Color de fondo verde */
     color: white;
     padding: 12px 24px;
     border: none;
@@ -895,7 +895,7 @@ strong {
 }
 
 .offer-btn:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el cursor */
+    background-color: #0073ff; /* Color más oscuro al pasar el cursor */
 }
 
 
