@@ -952,8 +952,6 @@ strong {
     .offer-btn:hover {
         background-color: #0073ff; /* Color más oscuro al pasar el cursor */
     }
-
-
 /* Ajustes adicionales para el contenedor */
 .sidebar-left {
     width: 35%;
@@ -964,4 +962,93 @@ strong {
 
 .content-right {
     width: 60%;
+}
+/* Estilos generales para dispositivos pequeños */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: row; /* Mantiene los elementos en una fila */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    /* Oculta el nombre y usuario, solo muestra la imagen */
+    .user-name {
+        display: none;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Alinea a la izquierda */
+    }
+
+    /* Barra de búsqueda al lado derecho de la imagen */
+    .search-bar {
+        flex-grow: 1; /* Hace que la barra de búsqueda ocupe el espacio disponible */
+        margin-left: 10px;
+    }
+
+    .search-bar input {
+        width: 100%; /* Asegura que la barra ocupe todo el ancho disponible */
+    }
+
+    .nav-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar-left, .content-right, .review-section {
+        width: 100%;
+    }
+
+    .about-section, .services-section, .review-section {
+        margin-bottom: 20px;
+    }
+
+    .services-section .service {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .profile-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .search-bar input {
+        width: 70%;
+    }
+
+    .nav-icons .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .service-content strong, .review-content strong {
+        font-size: 16px;
+    }
+
+    .stars i {
+        font-size: 14px;
+    }
+}
+/* Vuelve a mostrar el nombre y usuario en pantallas más grandes */
+@media (min-width: 769px) {
+    .user-name {
+        display: block; /* Muestra de nuevo el nombre y el usuario en pantallas más grandes */
+    }
 }
