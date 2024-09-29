@@ -1052,3 +1052,56 @@ strong {
         display: block; /* Muestra de nuevo el nombre y el usuario en pantallas más grandes */
     }
 }
+/* Estilos generales para la sección de condiciones */
+.condiciones {
+    background-color: #f9f9f9; /* Fondo claro para diferenciarlo */
+    padding: 40px; /* Espaciado interno cómodo */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px auto; /* Márgenes exteriores */
+    max-width: 800px; /* Limita el ancho de la sección */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Estilo para los encabezados */
+.condiciones h1 {
+    font-size: 28px; /* Tamaño de fuente más grande para encabezados */
+    color: #0073ff; /* Color azul para encabezados */
+    margin-bottom: 20px; /* Espaciado debajo del encabezado */
+    font-weight: bold; /* Negrita en los encabezados */
+    text-align: center; /* Centrar los encabezados */
+}
+
+/* Estilo para los párrafos */
+.condiciones p {
+    font-size: 16px; /* Tamaño de fuente legible */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 15px; /* Espaciado entre párrafos */
+}
+
+/* Lista en los párrafos */
+.condiciones ul {
+    list-style-type: disc; /* Lista con puntos */
+    padding-left: 40px; /* Alineación del texto en listas */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.condiciones ul li {
+    margin-bottom: 10px; /* Espaciado entre los elementos de la lista */
+    color: #333;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+    .condiciones {
+        padding: 20px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .condiciones h1 {
+        font-size: 24px; /* Reduce el tamaño de fuente para encabezados */
+    }
+
+    .condiciones p {
+        font-size: 14px; /* Reduce el tamaño de fuente para párrafos */
+    }
+}
