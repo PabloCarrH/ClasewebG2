@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Servicios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="service-container">
+        <div class="service-box">
+            <h2>Solicitud de Servicios</h2>
+            <form id="service-form" action="#">
+                <div class="input-group">
+                    <label for="service">Servicio Requerido</label>
+                    <input type="text" id="service" name="service" placeholder="Escribe el servicio requerido" required>
+                </div>
+                <div class="input-group">
+                    <label for="budget">Presupuesto Estimado</label>
+                    <input type="number" id="budget" name="budget" placeholder="Escribe el presupuesto" required>
+                </div>
+                <div class="input-group">
+                    <label for="start-date">Fecha de Inicio Deseada</label>
+                    <input type="date" id="start-date" name="start-date" required>
+                </div>
+                <div class="input-group">
+                    <label for="end-date">Fecha de Finalización Deseada</label>
+                    <input type="date" id="end-date" name="end-date" required>
+                </div>
+                <div class="input-group">
+                    <label for="client-name">Tu Nombre</label>
+                    <input type="text" id="client-name" name="client-name" placeholder="Tu nombre" required>
+                </div>
+                <div class="input-group">
+                    <label for="contact-email">Correo Electrónico</label>
+                    <input type="email" id="contact-email" name="contact-email" placeholder="Tu correo electrónico" required>
+                </div>
+                <div class="input-group buttons">
+                    <button type="submit" class="acceptbtn">Enviar Solicitud</button>
+                    <button onclick="location.href='dashboardClie.html'" class="acceptbtn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/Service.js"></script>
+    <script>
+        function resetForm() {
+            document.getElementById('service-form').reset();
+        }
+    </script>
+</body>
+</html>
