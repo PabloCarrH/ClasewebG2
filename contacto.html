@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzón de Sugerencias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">ProClick</div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenedor del buzón de sugerencias -->
+    <div class="container">
+        <h2>Buzón de Sugerencias</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ingresa tu teléfono" required>
+            </div>
+            <div class="input-group">
+                <label for="suggestion">Sugerencia:</label>
+                <textarea id="suggestion" name="suggestion" placeholder="Escribe tu sugerencia" required></textarea>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn-primary" type="submit">Finalizar</button>
+                <a href="index.html" class="btn-secondary">Inicio</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
