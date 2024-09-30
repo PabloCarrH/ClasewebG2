@@ -252,14 +252,6 @@ body {
 .next {
     right: 10px;
 }
-@media (max-width: 360px) {
-    .service-card {
-        flex: 0 0 calc(100% - 20px); /* 1 tarjeta visible */
-    }
-    .service-img {
-        height: 70px; /* Imágenes más pequeñas */
-    }
-}
 
 /* Cómo Funciona Section */
 .how-it-works {
