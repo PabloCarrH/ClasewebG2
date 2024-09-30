@@ -23,14 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
 
             if (response.ok) {
+                // Guardar el ID del usuario en localStorage
+                localStorage.setItem("userId", result.id);
+
+                // Mostrar el mensaje de bienvenida con el nombre del usuario
                 await Swal.fire({
                     icon: 'success',
-                    title: `Bienvenido(a) ${result.name || ''}`,
+                    title: `Bienvenido(a) <br> -- ${result.name || ''} --`, 
                     showConfirmButton: false,
                     timer: 1500
                 });
 
-                // Redirigir según el tipo de usuario si es necesario
+                // Redirigir según el tipo de usuario
                 window.location.href = result.isProfessional ? 'dashboardPro.html' : 'dashboardPro.html';
             } else {
                 await Swal.fire({

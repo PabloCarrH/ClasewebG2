@@ -19,7 +19,7 @@
         <div class="user-info">
             <img src="profile-image.png" alt="Imagen del Perfil" class="profile-img">
             <div class="user-name">
-                <strong>Juan Pérez</strong>
+                <strong id="hola">Juan Pérez</strong>
                 <p>@juanperez</p>
             </div>
         </div>
@@ -30,7 +30,9 @@
         <div class="nav-icons">
             <img src="noti-icon.svg" alt="Mensajes" class="icon">
             <img src="settings-icon.svg" alt="Configuraciones" class="icon">
-            <img src="logout-icon.svg" alt="Cerrar Sesión" class="icon">
+            <button id="logout-button" class="logout-btn">
+                <img src="logout-icon.svg" alt="Cerrar sesión" class="icon"/>
+            </button>
         </div>
     </header>
      
@@ -43,12 +45,9 @@
             
             <!-- Sección "Sobre Mí" en su propio contenedor -->
             <div class="about-section">
-                <h3>Sobre Mí</h3>
-                <p><strong>Nombre:</strong> Juan Pérez</p>
-                <p><strong>Correo Electrónico:</strong> juan@ejemplo.com</p>
-                <p><strong>Teléfono:</strong> +1 (555) 123-4567</p>
-                <p><strong>Ubicación:</strong> Madrid, España</p>
+                <!-- Aquí se llenará la información del usuario -->
             </div>
+            
             
 
             <!-- Sección "Servicios" en su propio contenedor -->
@@ -178,6 +177,6 @@
             </div>
         </div>
     </div>
-
+    <script src="js/datos.js"></script>
 </body>
 </html>
