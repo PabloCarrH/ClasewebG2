@@ -96,3 +96,11 @@ app.post('/api/submit-form', (req, res) => {
     const userId = 1; // Cambia esto si tienes lógica para capturar el user_id
 
     db.query(sqlInsert, [userId, service, cost, startDate, endDate, clientName, providerName], (error, results) => {
+
+        if (error) {
+            console.error('Error al insertar en la base de datos:', error);
+            return res.status(500).json({ message: 'Error en la base de datos.' });
+        }
+        res.status(201).json({ message: 'Formulario enviado con éxito.' });
+    });
+});
