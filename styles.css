@@ -191,23 +191,23 @@ body {
 }
 
 .service-card {
-    flex: 0 0 calc(15% - 20px); /* Cambiamos el tamaño a 15% para hacer las tarjetas más pequeñas */
+    flex: 0 0 calc(20% - 20px); /* Default para pantallas grandes */
     margin: 0 10px;
     background-color: white;
-    padding: 10px; /* Reducimos el padding */
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
     box-sizing: border-box;
-    min-width: 150px; /* Definimos un ancho mínimo más pequeño */
+    min-width: 150px;
 }
 
 /* Estilo para las imágenes */
 .service-img {
-    width: 100%; /* La imagen ocupará todo el ancho de la tarjeta */
-    height: 120px; /* Imagen más pequeña */
-    object-fit: cover; /* Mantiene la proporción */
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -221,12 +221,12 @@ body {
 }
 
 .service-info p.category {
-    font-size: 12px; /* Texto más pequeño */
+    font-size: 12px;
     font-weight: bold;
 }
 
 .service-info h3 {
-    font-size: 16px; /* Texto más pequeño */
+    font-size: 16px;
     margin: 5px;
 }
 
@@ -244,6 +244,64 @@ body {
     font-size: 18px;
     z-index: 100;
 }
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+/* Tablets */
+@media (max-width: 1024px) {
+    .service-card {
+        flex: 0 0 calc(25% - 20px); /* Tarjetas más grandes para tablets */
+    }
+    .service-img {
+        height: 100px; /* Reducimos el tamaño de la imagen */
+    }
+}
+
+/* Pantallas medianas y móviles grandes */
+@media (max-width: 768px) {
+    .service-card {
+        flex: 0 0 calc(33.33% - 20px); /* 3 tarjetas visibles */
+    }
+    .service-img {
+        height: 90px; /* Imágenes más pequeñas */
+    }
+}
+
+/* Pantallas pequeñas y móviles */
+@media (max-width: 480px) {
+    .service-card {
+        flex: 0 0 calc(45% - 20px); /* 2 tarjetas visibles, más espacio */
+        margin: 0 5px; /* Reducimos los márgenes para mejor ajuste */
+    }
+    .service-img {
+        height: 80px; /* Imágenes más pequeñas */
+    }
+    .service-info h3 {
+        font-size: 14px; /* Ajustamos el texto para pantallas pequeñas */
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .service-card {
+        flex: 0 0 calc(100% - 20px); /* 1 tarjeta visible */
+        margin: 0 5px;
+    }
+    .service-img {
+        height: 70px; /* Imágenes más pequeñas */
+    }
+    .service-info h3 {
+        font-size: 12px; /* Ajustamos aún más el texto */
+    }
+}
+
 
 .prev {
     left: 10px;
@@ -1041,12 +1099,6 @@ strong {
         flex-direction: column;
         align-items: flex-start;
     }
-    .service-card {
-        flex: 0 0 calc(33.33% - 20px); /* 3 tarjetas visibles */
-    }
-    .service-img {
-        height: 90px; /* Imágenes más pequeñas */
-    }
 }
 
 /* Estilos para pantallas muy pequeñas */
@@ -1072,12 +1124,7 @@ strong {
     .stars i {
         font-size: 14px;
     }
-     .service-card {
-        flex: 0 0 calc(50% - 20px); /* 2 tarjetas visibles */
-    }
-    .service-img {
-        height: 80px; /* Imágenes más pequeñas */
-    }
+
 }
 /* Vuelve a mostrar el nombre y usuario en pantallas más grandes */
 @media (min-width: 769px) {
