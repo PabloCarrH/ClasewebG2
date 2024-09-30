@@ -9,14 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="tabs">
-            <button class="tab-button active" onclick="showForm('suggestions')">Enviar Sugerencia</button>
-            <button class="tab-button" onclick="showForm('view-suggestions')">Ver Sugerencias</button>
-        </div>
 
         <!-- Formulario para enviar sugerencias -->
         <div id="suggestions-form" class="form-container active">
-            <h2>Formulario de Sugerencias</h2>
+            <h2>Formulario de sugerencias</h2>
             <label for="name-suggestion">Nombre:</label>
             <input type="text" id="name-suggestion" name="name-suggestion" placeholder="Tu nombre" required>
 
@@ -33,19 +29,6 @@
     <a href="index.html" class="back-link">← Volver al inicio</a>
 
     <script>
-        function showForm(formId) {
-            // Ocultar todos los formularios
-            document.getElementById('suggestions-form').classList.remove('active');
-            document.getElementById('view-suggestions-form').classList.remove('active');
-            
-            // Mostrar el formulario correspondiente
-            document.getElementById(`${formId}-form`).classList.add('active');
-            
-            // Actualizar el estado de los botones
-            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
-            document.querySelector(`.tab-button[onclick="showForm('${formId}')"]`).classList.add('active');
-        }
-
         function submitSuggestion() {
             const name = document.getElementById('name-suggestion').value;
             const email = document.getElementById('email-suggestion').value;
@@ -70,3 +53,4 @@
     </script>
 </body>
 </html>
+
