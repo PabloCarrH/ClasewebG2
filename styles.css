@@ -1226,3 +1226,49 @@ h2 {
         margin-bottom: 10px;
     }
 }
+
+/* Estilo general para las publicaciones */
+.publicacion {
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espacio interno */
+    margin: 20px 0; /* Espacio entre publicaciones */
+    background-color: #f9f9f9; /* Fondo claro */
+    transition: box-shadow 0.3s; /* Efecto de sombra al pasar el mouse */
+}
+
+/* Efecto de sombra al pasar el mouse */
+.publicacion:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la publicación */
+.publicacion h3 {
+    font-size: 1.5em; /* Tamaño de fuente grande */
+    color: #333; /* Color del texto */
+}
+
+/* Texto de la publicación */
+.publicacion p {
+    font-size: 1em; /* Tamaño de fuente estándar */
+    color: #666; /* Color de texto más claro */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Botones */
+.boton {
+    display: inline-block; /* Para que los botones se alineen correctamente */
+    padding: 10px 20px; /* Espacio interno del botón */
+    margin-top: 10px; /* Espacio superior del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #007BFF; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s; /* Transición para el color de fondo */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.boton:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro */
+}

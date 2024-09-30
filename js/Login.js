@@ -22,14 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
 
+            // Verificar la respuesta en la consola
+            console.log(result);
+
             if (response.ok) {
                 // Guardar el ID del usuario en localStorage
                 localStorage.setItem("userId", result.id);
+                console.log(result.id);
 
                 // Mostrar el mensaje de bienvenida con el nombre del usuario
                 await Swal.fire({
                     icon: 'success',
-                    title: `Bienvenido(a) <br> -- ${result.name || ''} --`, 
+                    title: `Bienvenido(a) <br> -- ${result.name || 'Sin Nombre'} --`, 
                     showConfirmButton: false,
                     timer: 1500
                 });

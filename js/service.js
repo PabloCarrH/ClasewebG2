@@ -16,7 +16,7 @@ document.getElementById('service-form').addEventListener('submit', function(even
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(serviceData)
-    })
+    }) 
     .then(response => response.json())
     .then(async data => {
         console.log('Formulario enviado con éxito:', data);
