@@ -177,9 +177,9 @@ body {
 /* Contenedor del carrusel */
 .carousel-container {
     overflow: hidden;
-    max-width: 100%; /* Ocupa el ancho completo de la pantalla */
+    max-width: 100%;
     position: relative;
-    margin: 0 auto; /* Centra el carrusel */
+    margin: 0 auto;
 }
 
 /* Tarjetas del carrusel */
@@ -191,22 +191,38 @@ body {
 
 .service-card {
     flex: 0 0 calc(25% - 20px);
-    margin: 0 10px; /* Espaciado entre tarjetas */
+    margin: 0 10px;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave para un efecto bonito */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease; /* Animación suave para el hover */
+    transition: transform 0.3s ease;
+}
+/* Estilo para las imágenes */
+.service-img {
+    width: 100%; /* La imagen ocupará todo el ancho de la tarjeta */
+    height: auto; /* La altura será proporcional */
+    border-radius: 8px; /* Opcional: si quieres bordes redondeados */
 }
 
 .service-card:hover {
-    transform: scale(1.05); /* Agranda la tarjeta ligeramente cuando pasas el mouse */
+    transform: scale(1.05);
 }
 
-.service-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+/* Estilo para la información del servicio */
+.service-info {
+    margin-top: 10px;
+}
+
+.service-info p.category {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.service-info h3 {
+    font-size: 18px; /* Reducimos el tamaño del título */
+    margin: 5px;
 }
 
 /* Botones de navegación */
