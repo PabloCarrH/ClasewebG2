@@ -31,3 +31,20 @@
                 <div class="input-group">
                     <label for="client-name">Nombre del Cliente</label>
                     <input type="text" id="client-name" name="client-name" 
+                    placeholder="Nombre del cliente" required>
+                </div>
+                <div class="input-group">
+                    <label for="provider-name">Nombre del Prestador de Servicio</label>
+                    <input type="text" id="provider-name" name="provider-name" placeholder="Nombre del prestador de servicio" required>
+                </div>
+                <div class="input-group buttons">
+                    <button type="submit" class="acceptbtn">Aceptar</button>
+                    <button type="button" class="rejectbtn" onclick="rejectJob()">Rechazar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/Service.js"></script>
+</body>
+</html>
