@@ -88,3 +88,7 @@ app.post('/api/login', (req, res) => {
 });
 // Ruta para manejar el formulario
 app.post('/api/submit-form', (req, res) => {
+
+    const sqlInsert = `
+    INSERT INTO publicacion (user_id, servicio, costo, fehcaInicio, fehcaFinal, NomCliente, NomProfecional, asignado) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, false)`;
