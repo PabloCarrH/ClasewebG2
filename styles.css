@@ -1041,6 +1041,12 @@ strong {
         flex-direction: column;
         align-items: flex-start;
     }
+    .service-card {
+        flex: 0 0 calc(33.33% - 20px); /* 3 tarjetas visibles */
+    }
+    .service-img {
+        height: 90px; /* Imágenes más pequeñas */
+    }
 }
 
 /* Estilos para pantallas muy pequeñas */
@@ -1065,6 +1071,12 @@ strong {
 
     .stars i {
         font-size: 14px;
+    }
+     .service-card {
+        flex: 0 0 calc(50% - 20px); /* 2 tarjetas visibles */
+    }
+    .service-img {
+        height: 80px; /* Imágenes más pequeñas */
     }
 }
 /* Vuelve a mostrar el nombre y usuario en pantallas más grandes */
