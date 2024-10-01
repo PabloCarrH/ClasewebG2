@@ -104,14 +104,14 @@ app.post('/api/login', (req, res) => {
         });
     });
 });
-
+ 
 
 // Ruta para manejar el formulario
 app.post('/api/submit-form', (req, res) => {
     const { service, cost, startDate, endDate, clientName, providerName } = req.body;
 
     const sqlInsert = `
-    INSERT INTO publicacion (user_id, servicio, costo, fechaInicio, fehcaFinal, NomCliente, NomProfecional, asignado) 
+    INSERT INTO publicacion (user_id, servicio, costo, fechaInicio, fechaFinal, NomCliente, NomProfecional, asignado) 
     VALUES (?, ?, ?, ?, ?, ?, ?, false)`;
 
     const userId = 1; // Cambia esto si tienes lógica para capturar el user_id
@@ -124,6 +124,7 @@ app.post('/api/submit-form', (req, res) => {
         res.status(201).json({ message: 'Formulario enviado con éxito.' });
     });
 });
+
 // Ruta para obtener información del usuario
 app.get('/api/user/:id', (req, res) => {
     const userId = req.params.id;

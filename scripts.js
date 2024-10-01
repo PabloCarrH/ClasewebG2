@@ -66,3 +66,25 @@ document.getElementById("hamburger").addEventListener("click", function() {
     const navLinks = document.querySelector(".nav-links");
     navLinks.classList.toggle("active");
 });
+ // Función para actualizar el contador de visitas
+ function updateVisitCounter() {
+    // Obtener el valor actual del contador desde localStorage
+    let visitCount = localStorage.getItem('visitCount');
+
+    // Si no hay un contador, inicializarlo en 0
+    if (!visitCount) {
+        visitCount = 0;
+    }
+
+    // Incrementar el contador
+    visitCount++;
+
+    // Guardar el nuevo valor en localStorage
+    localStorage.setItem('visitCount', visitCount);
+
+    // Actualizar el texto en el DOM
+    document.getElementById('visit-count').innerText = visitCount;
+}
+
+// Llamar a la función al cargar la página
+updateVisitCounter();
