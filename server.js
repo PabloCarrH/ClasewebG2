@@ -3,16 +3,20 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer'); // Asegúrate de instalar nodemailer
+const crypto = require('crypto'); // Para generar tokens
 
 const app = express();
 const port = 3000;
+
 // CORS configuration
 const corsOptions = {
     origin: '*', // Be cautious with this in production
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
     optionsSuccessStatus: 204
-  };
+};
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -34,8 +38,89 @@ db.connect((err) => {
     console.log('Conexión a la base de datos MySQL establecida.');
 });
 
-app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000');
+// Función para generar un token único
+function generateToken() {
+    return crypto.randomBytes(32).toString('hex');
+}
+
+// Ruta para recuperar la contraseña
+app.post('/forgot-password', async (req, res) => {
+    const { email } = req.body;
+
+    // Verificar si el usuario existe
+    db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
+        if (error) {
+            return res.status(500).json({ message: 'Error en la consulta de la base de datos' });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ message: 'Correo electrónico no encontrado' });
+        }
+
+        const user = results[0];
+
+        // Generar token y enlace de restablecimiento
+        const token = generateToken();
+        const resetLink = `http://localhost:3000/reset-password?token=${token}&email=${email}`;
+        const nodemailer = require('nodemailer');
+        // Configurar el transportador de nodemailer
+        const transporter = nodemailer.createTransport({
+            service: 'gmail', // Cambia esto si usas otro servicio
+            auth: {
+                user: 'profesionalesclick@gmail.com', // Cambia por tu correo
+                pass: 'proclick123' // Cambia por tu contraseña
+            }
+        });
+
+        // Enviar correo
+        const mailOptions = {
+            from: 'profesionalesclick@gmail.com',
+            to: email,
+            subject: 'Recuperación de Contraseña',
+            text: `Haga clic en el siguiente enlace para restablecer su contraseña: ${resetLink}`
+        };
+
+        transporter.sendMail(mailOptions, (err, info) => {
+            if (err) {
+                console.error('Error al enviar el correo:', err.message); // Mostrar el error en la consola
+                return res.status(500).json({ message: 'Error al enviar el correo electrónico' });
+            }
+            console.log('Correo enviado:', info.response); // Mostrar la respuesta del envío
+            res.status(200).json({ message: 'Correo enviado con éxito. Por favor, revisa tu bandeja de entrada.' });
+        });
+        
+    });
+});
+
+// Ruta para restablecer la contraseña
+app.post('/api/reset-password', async (req, res) => {
+    const { token, newPassword } = req.body;
+
+    // Verificar el token y obtener el usuario asociado
+    const sqlVerifyToken = 'SELECT * FROM password_resets WHERE token = ?';
+    db.query(sqlVerifyToken, [token], async (error, results) => {
+        if (error || results.length === 0) {
+            return res.status(400).json({ message: 'Token no válido o expirado.' });
+        }
+
+        const userId = results[0].user_id;
+
+        // Cifrar la nueva contraseña
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        // Actualizar la contraseña en la base de datos
+        const sqlUpdatePassword = 'UPDATE users SET password = ? WHERE id = ?';
+        db.query(sqlUpdatePassword, [hashedPassword, userId], (error) => {
+            if (error) {
+                return res.status(500).json({ message: 'Error al restablecer la contraseña.' });
+            }
+
+            // Eliminar el token de la base de datos
+            const sqlDeleteToken = 'DELETE FROM password_resets WHERE token = ?';
+            db.query(sqlDeleteToken, [token]);
+
+            res.status(200).json({ message: 'Contraseña restablecida exitosamente.' });
+        });
+    });
 });
 
 
@@ -104,7 +189,6 @@ app.post('/api/login', (req, res) => {
         });
     });
 });
- 
 
 // Ruta para manejar el formulario
 app.post('/api/submit-form', (req, res) => {
@@ -213,4 +297,7 @@ app.get('/api/publicaciones/asignadas', (req, res) => {
     });
 });
 
-
+// Iniciar el servidor
+app.listen(port, () => {
+    console.log(`Servidor corriendo en el puerto ${port}`);
+});
