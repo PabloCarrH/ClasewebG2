@@ -51,6 +51,15 @@ CREATE TABLE usersCliente (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+-- Crear tabla para recuperación de contraseñas
+CREATE TABLE password_resets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
 INSERT INTO usersProfesional (user_id, fechanacimiento, celular, direccion, servicio, descripcionserv, experiencia, certificaciones, tarifa, disponibilidad) VALUES
 (1, '1985-04-15', '5551234567', 'Calle Falsa 123', 'Plomería', 'Servicios de plomería residencial y comercial', '10 años', 'Certificación en plomería', 50.00, 'Lunes a Viernes, 9 AM - 5 PM'),
 (2, '1990-06-20', '5559876543', 'Avenida Siempre Viva 742', 'Electricidad', 'Instalación y reparación eléctrica', '8 años', 'Certificación en electricidad', 60.00, 'Sábado, 10 AM - 4 PM');
