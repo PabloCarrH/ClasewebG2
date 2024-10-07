@@ -304,8 +304,20 @@ app.get('/api/posts/latest-assigned', (req, res) => {
     WHERE asignado = 1
     ORDER BY id DESC
     LIMIT 5;
-`;
+    `;
+    
+    // Cambia pool.query por db.query
+    db.query(query, (err, result) => {
+        if (err) {
+            console.error('Error ejecutando la consulta:', err);
+            res.status(500).json({ error: 'Error en el servidor' });
+        } else {
+            res.json(result);  // Cambié result.rows a result porque en MySQL no se usa .rows
+        }
+    });
 });
+
+
 // Ruta para actualizar la información del usuario
 app.post('/updateUserInfo', (req, res) => {
     const { userType, user_id, fechanacimiento, celular, direccion, servicio, descripcionserv, experiencia, certificaciones, tarifa, disponibilidad, namecliente, informacionad } = req.body;
