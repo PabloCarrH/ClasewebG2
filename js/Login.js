@@ -26,9 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(result);
 
             if (response.ok) {
-                // Guardar el ID del usuario en localStorage
+                // Guardar el ID del usuario y su tipo en localStorage
                 localStorage.setItem("userId", result.id);
-                console.log(result.id);
+                localStorage.setItem("userType", result.isProfessional ? 'professional' : 'client');
+                
+                console.log(result.id, result.isProfessional);
 
                 // Mostrar el mensaje de bienvenida con el nombre del usuario
                 await Swal.fire({
@@ -38,8 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     timer: 1500
                 });
 
-                // Redirigir según el tipo de usuario
-                window.location.href = result.isProfessional ? 'dashboardPro.html' : 'dashboardPro.html';
+                    window.location.href = 'dashboardPro.html';
+
+
             } else {
                 await Swal.fire({
                     icon: 'error',

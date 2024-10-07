@@ -126,3 +126,150 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error en la petición:', error);
     }
 });
+
+document.getElementById("showPosts").addEventListener("click", function () {
+    // Mostrar el modal
+    document.getElementById("postsModal").style.display = "block";
+
+    // Hacer una petición al servidor para obtener las publicaciones
+    fetch('http://localhost:3000/api/posts/latest-assigned')
+        .then(response => response.json())
+        .then(data => {
+            // Llenar la tabla con los datos recibidos
+            const tableBody = document.querySelector("#postsTable tbody");
+            tableBody.innerHTML = ""; // Limpiar contenido anterior
+
+            data.forEach(post => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${post.servicio}</td>
+                    <td>${post.costo}</td>
+                    <td>${post.fechaInicio}</td>
+                    <td>${post.fechaFinal}</td>
+                    <td>${post.NomCliente}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        });
+});
+
+// Cerrar el modal cuando se hace clic en el botón de cierre
+document.querySelector(".close").addEventListener("click", function () {
+    document.getElementById("postsModal").style.display = "none";
+});
+
+// Cerrar el modal si el usuario hace clic fuera del contenido del modal
+window.onclick = function (event) {
+    if (event.target === document.getElementById("postsModal")) {
+        document.getElementById("postsModal").style.display = "none";
+    }
+};
+
+
+// Mostrar el formulario según el tipo de usuario almacenado en localStorage
+document.getElementById('configButton').addEventListener('click', function() {
+    const userType = localStorage.getItem('userType'); // Recuperar el tipo de usuario desde localStorage
+    const formContainer = document.getElementById('configFormContainer');
+    const form = document.getElementById('configForm');
+    
+    // Mostrar el formulario
+    formContainer.style.display = 'block';
+    
+    // Limpiar el contenido del formulario antes de agregar nuevos campos
+    form.innerHTML = '';
+
+    if (userType === 'professional') {
+        form.innerHTML = `
+            <h3>Actualizar Información Profesional</h3>
+            <label for="fechanacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechanacimiento" name="fechanacimiento">
+
+            <label for="celular">Celular</label>
+            <input type="text" id="celular" name="celular">
+
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion">
+
+            <label for="servicio">Servicio</label>
+            <input type="text" id="servicio" name="servicio">
+
+            <label for="descripcionserv">Descripción del Servicio</label>
+            <input type="text" id="descripcionserv" name="descripcionserv">
+
+            <label for="experiencia">Experiencia</label>
+            <input type="text" id="experiencia" name="experiencia">
+
+            <label for="certificaciones">Certificaciones</label>
+            <input type="text" id="certificaciones" name="certificaciones">
+
+            <label for="tarifa">Tarifa</label>
+            <input type="number" step="0.01" id="tarifa" name="tarifa">
+
+            <label for="disponibilidad">Disponibilidad</label>
+            <input type="text" id="disponibilidad" name="disponibilidad">
+
+            <button type="submit">Guardar</button>
+        `;
+    } else if (userType === 'client') {
+        form.innerHTML = `
+            <h3>Actualizar Información del Cliente</h3>
+            <label for="namecliente">Nombre del Cliente</label>
+            <input type="text" id="namecliente" name="namecliente">
+
+            <label for="fechanacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechanacimiento" name="fechanacimiento">
+
+            <label for="celular">Celular</label>
+            <input type="text" id="celular" name="celular">
+
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion">
+
+            <label for="informacionad">Información Adicional</label>
+            <input type="text" id="informacionad" name="informacionad">
+
+            <button type="submit">Guardar</button>
+        `;
+    }
+});
+
+// Cerrar el modal si se hace clic fuera del formulario
+window.onclick = function(event) {
+    const formContainer = document.getElementById('configFormContainer');
+    if (event.target === formContainer) {
+        formContainer.style.display = "none";
+    }
+};
+
+
+document.getElementById('configForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const userType = localStorage.getItem('userType');
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    data.userType = userType; // O 'client', dependiendo del tipo de usuario
+
+    // También necesitas el user_id, que puede estar guardado en localStorage
+    data.user_id = localStorage.getItem('userId'); // Suponiendo que guardaste el user_id al loguear
+
+    fetch('http://localhost:3000/updateUserInfo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        alert('Información actualizada correctamente');
+        // Ocultar el formulario después de guardar
+        document.getElementById('configFormContainer').style.display = 'none';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un error al guardar la información');
+    });
+    location.reload();
+});
+
+

@@ -29,8 +29,10 @@
         </div>
         <div class="nav-icons">
             
-            
+            <img src="noti-icon.svg" alt="Mensajes" class="icon" id="showPosts">
+            <img src="settings-icon.svg" alt="Configuraciones" class="icon" id="configButton">
             <a href="index.html">
+                
                 <button id="logout-button" class="logout-btn">
                     <img src="logout-icon.svg" alt="Cerrar sesión" class="icon"/>
                 </button>
@@ -94,6 +96,33 @@
 
         </div>
     </div>
+    <div id="postsModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Últimas Publicaciones Aceptadas</h2>
+          <table id="postsTable">
+            <thead>
+              <tr>
+                <th>Servicio</th>
+                <th>Costo</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Final</th>
+                <th>Cliente</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí se llenarán las publicaciones dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="configFormContainer" style="display: none;">
+        <form id="configForm">
+            <!-- Aquí irá el formulario dinámico que cambia según el tipo de usuario -->
+        </form>
+    </div>
+    
+
     <script src="js/datos.js"></script>
 </body>
 </html>

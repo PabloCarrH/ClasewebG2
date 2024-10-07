@@ -17,8 +17,8 @@ CREATE TABLE publicacion(
     user_id INT,
     servicio VARCHAR(255),
     costo VARCHAR(255),
-    fehcaInicio DATE,
-    fehcaFinal DATE,
+    fechaInicio DATE,
+    fechaFinal DATE,
     NomCliente VARCHAR(15), -- Aumentado para soportar códigos de área
     NomProfecional VARCHAR(100),
     asignado boolean,

@@ -297,6 +297,99 @@ app.get('/api/publicaciones/asignadas', (req, res) => {
     });
 });
 
+app.get('/api/posts/latest-assigned', (req, res) => {
+    const query = `
+    SELECT servicio, costo, fechaInicio, fechaFinal, NomCliente
+    FROM publicacion
+    WHERE asignado = 1
+    ORDER BY id DESC
+    LIMIT 5;
+`;
+});
+// Ruta para actualizar la información del usuario
+app.post('/updateUserInfo', (req, res) => {
+    const { userType, user_id, fechanacimiento, celular, direccion, servicio, descripcionserv, experiencia, certificaciones, tarifa, disponibilidad, namecliente, informacionad } = req.body;
+
+    if (userType === 'professional') {
+        // Verificar si el usuario profesional ya existe en la tabla
+        db.query('SELECT * FROM usersProfesional WHERE user_id = ?', [user_id], (err, results) => {
+            if (err) {
+                console.error('Error al verificar el profesional:', err);
+                return res.status(500).json({ message: 'Error al verificar el profesional.' });
+            }
+
+            if (results.length > 0) {
+                // Si existe, actualizar la información
+                db.query(
+                    'UPDATE usersProfesional SET fechanacimiento = ?, celular = ?, direccion = ?, servicio = ?, descripcionserv = ?, experiencia = ?, certificaciones = ?, tarifa = ?, disponibilidad = ? WHERE user_id = ?',
+                    [fechanacimiento, celular, direccion, servicio, descripcionserv, experiencia, certificaciones, tarifa, disponibilidad, user_id],
+                    (err, result) => {
+                        if (err) {
+                            console.error('Error al actualizar la información profesional:', err);
+                            return res.status(500).json({ message: 'Error al actualizar la información profesional.' });
+                        }
+                        res.status(200).json({ message: 'Información profesional actualizada correctamente.' });
+                    }
+                );
+            } else {
+                // Si no existe, insertar nueva información
+                db.query(
+                    'INSERT INTO usersProfesional (user_id, fechanacimiento, celular, direccion, servicio, descripcionserv, experiencia, certificaciones, tarifa, disponibilidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    [user_id, fechanacimiento, celular, direccion, servicio, descripcionserv, experiencia, certificaciones, tarifa, disponibilidad],
+                    (err, result) => {
+                        if (err) {
+                            console.error('Error al insertar la información profesional:', err);
+                            return res.status(500).json({ message: 'Error al insertar la información profesional.' });
+                        }
+                        res.status(200).json({ message: 'Información profesional insertada correctamente.' });
+                    }
+                );
+            }
+        });
+    } else if (userType === 'client') {
+        // Verificar si el usuario cliente ya existe en la tabla
+        db.query('SELECT * FROM usersCliente WHERE user_id = ?', [user_id], (err, results) => {
+            if (err) {
+                console.error('Error al verificar el cliente:', err);
+                return res.status(500).json({ message: 'Error al verificar el cliente.' });
+            }
+
+            if (results.length > 0) {
+                // Si existe, actualizar la información
+                db.query(
+                    'UPDATE usersCliente SET namecliente = ?, fechanacimiento = ?, celular = ?, direccion = ?, informacionad = ? WHERE user_id = ?',
+                    [namecliente, fechanacimiento, celular, direccion, informacionad, user_id],
+                    (err, result) => {
+                        if (err) {
+                            console.error('Error al actualizar la información del cliente:', err);
+                            return res.status(500).json({ message: 'Error al actualizar la información del cliente.' });
+                        }
+                        res.status(200).json({ message: 'Información del cliente actualizada correctamente.' });
+                    }
+                );
+            } else {
+                // Si no existe, insertar nueva información
+                db.query(
+                    'INSERT INTO usersCliente (user_id, namecliente, fechanacimiento, celular, direccion, informacionad) VALUES (?, ?, ?, ?, ?, ?)',
+                    [user_id, namecliente, fechanacimiento, celular, direccion, informacionad],
+                    (err, result) => {
+                        if (err) {
+                            console.error('Error al insertar la información del cliente:', err);
+                            return res.status(500).json({ message: 'Error al insertar la información del cliente.' });
+                        }
+                        res.status(200).json({ message: 'Información del cliente insertada correctamente.' });
+                    }
+                );
+            }
+        });
+    }
+
+    console.log(req.body); // Para verificar qué datos están llegando al servidor
+});
+
+
+
+
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);

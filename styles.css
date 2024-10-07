@@ -1459,3 +1459,270 @@ h2 {
 .boton:hover {
     background-color: #0056b3; /* Color de fondo más oscuro */
 }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Estilos generales del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    overflow: auto; /* Hacer scroll si el contenido es grande */
+  }
+  
+  /* Contenido del modal */
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px; /* Ancho máximo */
+    max-height: 80vh; /* Limitar la altura máxima */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    animation: fadeIn 0.5s ease; /* Animación de aparición */
+    text-align: center;
+    overflow-y: auto; /* Scroll vertical si el contenido se desborda */
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Botón de cierre del modal */
+  .close {
+    color: #444;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover {
+    color: #d9534f; /* Rojo en hover */
+  }
+  
+  /* Estilo de la tabla */
+  #postsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #postsTable th, #postsTable td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Evitar que el contenido largo desborde */
+  }
+  
+  #postsTable th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  #postsTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Hacer que los botones y textos luzcan mejor */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos adicionales para pantallas más pequeñas */
+  @media (max-width: 600px) {
+    .modal-content {
+      width: 95%; /* Ajustar el ancho en pantallas pequeñas */
+      max-height: 90vh; /* Aumentar la altura máxima */
+    }
+  
+    #postsTable th, #postsTable td {
+      font-size: 12px; /* Reducir el tamaño del texto en pantallas pequeñas */
+      padding: 8px 10px; /* Espaciado más pequeño */
+    }
+  
+    h2 {
+      font-size: 20px; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+  }
+  
+   
+/* Estilos básicos del modal */
+#configFormContainer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro */
+}
+
+#configForm {
+    background-color: #fefefe;
+    margin: 5% auto; /* Centramos el modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Tamaño por defecto del modal */
+    max-width: 600px; /* Límite máximo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Hacer el modal más responsivo */
+@media screen and (max-width: 600px) {
+    #configForm {
+        width: 80%; /* Ancho más pequeño en pantallas pequeñas */
+    }
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
