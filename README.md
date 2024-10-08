@@ -1,5 +1,15 @@
 link https://pablocarrh.github.io/ClasewebG2/
 
+Integrantes:
+joan Gabriel Acevedo Mateus
+Karol Stephania Bernal Moncada
+Andres Felipe Gonzales Amaya
+Daniel David Gonzales Tamayo
+Juan Pablo Gomez Barreto
+Daniel Garcia Rico
+Laura Valentina Godoy Godoy
+Bekhan Santiago Garnica Suarez
+
 El Proyecto
 Idea Principal
 El proyecto "Profesionales a un Click" se centra en la creación de una plataforma digital que facilite la conexión directa entre clientes y profesionales de diferentes áreas, como limpieza, mantenimiento, reparaciones, entre otros servicios. El objetivo es simplificar el proceso de búsqueda y contratación de servicios, ofreciendo a los usuarios una experiencia segura, eficiente y confiable para contratar profesionales verificados y calificados.
