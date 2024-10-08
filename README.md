@@ -1,14 +1,14 @@
 link https://pablocarrh.github.io/ClasewebG2/
 
 Integrantes:
-joan Gabriel Acevedo Mateus
-Karol Stephania Bernal Moncada
-Andres Felipe Gonzales Amaya
-Daniel David Gonzales Tamayo
-Juan Pablo Gomez Barreto
-Daniel Garcia Rico
-Laura Valentina Godoy Godoy
-Bekhan Santiago Garnica Suarez
+joan Gabriel Acevedo Mateus,
+Karol Stephania Bernal Moncada,
+Andres Felipe Gonzales Amaya,
+Daniel David Gonzales Tamayo,
+Juan Pablo Gomez Barreto,
+Daniel Garcia Rico,
+Laura Valentina Godoy Godoy,
+Bekhan Santiago Garnica Suarez,
 
 El Proyecto
 Idea Principal
